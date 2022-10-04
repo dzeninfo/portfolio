@@ -1639,7 +1639,9 @@ body::after {
 }
 
 .copy {
+  font-size: 12px;
   padding: 10px;
+  line-height: 140%;
   text-align: center;
 }
 
@@ -2179,6 +2181,10 @@ body::after {
   gap: 10px;
 }
 
+.header__logo-link {
+  z-index: 5;
+}
+
 .header__logo {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 15%;
@@ -2628,9 +2634,9 @@ body::after {
 }
 
 .advantage {
-  z-index: 1;
   position: relative;
   background-color: #fbe186;
+  z-index: 1;
 }
 
 .advantage svg {
@@ -3112,7 +3118,7 @@ body::after {
   }
 
   .kind {
-    padding-top: 3.125rem;
+    padding-top: 6.25rem;
   }
 
   .kind__description {
@@ -3357,7 +3363,7 @@ body::after {
   }
 
   .kind {
-    padding-top: 1.25rem;
+    padding-top: 3.75rem;
   }
 
   .kind__description {
@@ -3540,6 +3546,7 @@ body::after {
 
   .header__container {
     min-height: 60px;
+    gap: 5px;
   }
 
   .header__logo-content {
@@ -4084,15 +4091,15 @@ body::after {
     }
 }
 
-@supports (padding-top: clamp( 1.25rem , 0.7282608696rem  +  2.6086956522vw , 3.125rem )) {
+@supports (padding-top: clamp( 3.75rem , 3.0543478261rem  +  3.4782608696vw , 6.25rem )) {
     .kind {
-      padding-top: clamp( 1.25rem , 0.7282608696rem  +  2.6086956522vw , 3.125rem );
+      padding-top: clamp( 3.75rem , 3.0543478261rem  +  3.4782608696vw , 6.25rem );
     }
 }
 
-@supports not (padding-top: clamp( 1.25rem , 0.7282608696rem  +  2.6086956522vw , 3.125rem )) {
+@supports not (padding-top: clamp( 3.75rem , 3.0543478261rem  +  3.4782608696vw , 6.25rem )) {
     .kind {
-      padding-top: calc(1.25rem + 1.875 * (100vw - 20rem) / 71.875);
+      padding-top: calc(3.75rem + 2.5 * (100vw - 20rem) / 71.875);
     }
 }
 
