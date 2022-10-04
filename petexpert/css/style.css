@@ -3201,11 +3201,12 @@ body::after {
   }
 
   .staff__block {
-    height: 620px;
+    height: 455px;
+    gap: 0;
   }
 
   .staff-thumbs__slider {
-    height: 540px;
+    height: 405px;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
