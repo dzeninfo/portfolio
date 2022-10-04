@@ -6221,13 +6221,30 @@
                     observer: true,
                     observeParents: true,
                     speed: 800,
-                    grabCursor: true
+                    grabCursor: true,
+                    breakpoints: {
+                        290: {
+                            direction: "vertical",
+                            slidesPerView: 3
+                        },
+                        600: {
+                            slidesPerView: 2,
+                            direction: "horizontal"
+                        },
+                        800: {
+                            direction: "horizontal",
+                            slidesPerView: 3
+                        },
+                        992: {
+                            direction: "vertical",
+                            slidesPerView: 3
+                        }
+                    }
                 });
                 new core(".staff__slider", {
                     modules: [ EffectFade, Thumb, Navigation ],
                     observer: true,
                     observeParents: true,
-                    slidesPerView: 1,
                     speed: 800,
                     effect: "fade",
                     thumbs: {
@@ -6236,7 +6253,7 @@
                             breakpoints: {
                                 290: {
                                     direction: "vertical",
-                                    slidesPerView: 4
+                                    slidesPerView: 3
                                 },
                                 600: {
                                     direction: "horizontal",
