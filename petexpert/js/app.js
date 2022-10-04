@@ -6213,40 +6213,15 @@
                     },
                     on: {
                         init: function() {},
-                        slideChange: function() {
-                            document.querySelectorAll(".kind__slide");
-                            document.querySelector(".kind__slider-title");
-                            const nextSlide = document.querySelector(".swiper-slide-next");
-                            document.querySelector(".swiper-slide-active");
-                            nextSlide.getAttribute("data-slider-title");
-                            document.querySelector(".kind__swiper-button-next");
-                        }
+                        slideChange: function() {}
                     }
                 });
                 new core(".staff-thumbs__slider", {
-                    modules: [ Navigation ],
+                    modules: [],
                     observer: true,
                     observeParents: true,
                     speed: 800,
-                    grabCursor: true,
-                    breakpoints: {
-                        320: {
-                            direction: "vertical",
-                            slidesPerView: 4
-                        },
-                        600: {
-                            slidesPerView: 2,
-                            direction: "horizontal"
-                        },
-                        800: {
-                            direction: "horizontal",
-                            slidesPerView: 3
-                        },
-                        992: {
-                            direction: "vertical",
-                            slidesPerView: 3
-                        }
-                    }
+                    grabCursor: true
                 });
                 new core(".staff__slider", {
                     modules: [ EffectFade, Thumb, Navigation ],
@@ -6258,9 +6233,8 @@
                     thumbs: {
                         swiper: {
                             el: ".staff-thumbs__slider",
-                            slidesPerView: 4,
                             breakpoints: {
-                                320: {
+                                290: {
                                     direction: "vertical",
                                     slidesPerView: 4
                                 },
