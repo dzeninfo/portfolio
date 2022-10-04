@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>PetExpert</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20221004123017">
+	<link rel="stylesheet" href="https://unpkg.com/transition-style?_v=20221004123017">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body data-popup-show>
+	<div class="wrapper">
+		<header class="header" data-scroll="100" data-scroll-show="2000">
+			<div class="header__container">
+				<a href="#" data-goto=".home">
+				<div class="header__logo">
+
+						<picture>
+							<source srcset="img/icons/logo.webp" type="image/webp"><img src="img/icons/logo.png" alt="logo">
+						</picture>
+						<div class="header__logo-content">
+							<div class="header__subtitle">Since 1996</div>
+							<div class="header__title">Pet-expert</div>
+						</div>
+
+				</div>
+			</a>
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list" data-spollers="768,max">
+							<li class="menu__item">
+								<a href="#" data-goto=".services" class="menu__link">Services and Prices</a>
+								<button type="button" class="submenu__arrow _icon-arrow-up" data-spoller data-spoller-close></button>
+								<ul class="submenu">
+									<li class="submenu__item">
+										<a href="#" class="submenu__link">Price list</a>
+									</li>
+									<li class="submenu__item">
+										<a href="#" class="submenu__link">Price list</a>
+									</li>
+									<li class="submenu__item">
+										<a href="#" class="submenu__link">Price list</a>
+									</li>
+									<li class="submenu__item">
+										<a href="#" class="submenu__link">Price list</a>
+									</li>
+									<li class="submenu__item">
+										<a href="#" class="submenu__link">Price list</a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu__item">
+								<a href="#" data-goto=".advantage" class="menu__link">Advantages</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link" data-goto=".staff">Team</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link" data-goto=".testemonials">Testemonials</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link" data-goto=".footer">Contacts</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="header__contacts">
+					<div class="header__contact-item location">
+						<span class="_icon-location"></span>
+						<div class="header__contact-item-content">
+							<p class="location-text ">242 W. Harron St., Suite 1, Chicago, IL 6612</p>
+						</div>
+					</div>
+					<div class="header__contact-item time">
+						<span class="_icon-clock"></span>
+						<div class="header__contact-item-content">
+							<p class="time-text">We work</p>
+							<p>24/7</p>
+						</div>
+					</div>
+					<div class="header__contact-item phone">
+						<span class="_icon-phone"></span>
+						<div class="header__contact-item-content">
+							<a href="tel:000000" class="phone__link">(312) 26-2008</a>
+							<p>Call Us</p>
+						</div>
+					</div>
+				</div>
+				<button type="button" class="menu__icon icon-menu"><span></span></button>
+			</div>
+		</header>
+		<main class="page">
+			<!-- /**================**
+					**"Home"*
+			===================*/ -->
+			<section class="home">
+				<div class="home__orbits orbits"><span class="orbits__medium"></span><span
+						class="orbits__medium-off"></span><span class="orbits__small"></span><span class="orbits__small-off"></span>
+				</div>
+				<div class="home__container">
+					<h1 class="home__title title">
+						Pet-Expert is a reliable veterinary clinic in our area.
+					</h1>
+					<p class="home__description description">Clinic "Pet-Expert" since 1996 has been professionally engaged in the
+						prevention, diagnosis and treatment of animals.</p>
+					<div class="home__button-wrapper">
+						<button data-popup="#popup" type="submit" class="home__button button button_violet">Make an
+							appointment</button>
+						<button type="submit" class="button" data-popup="#popup-home-doctor">home doctor</button>
+					</div>
+					<div class="home__img-wrapper">
+						<div class="home__image-ibg -ibg_contain">
+							<picture>
+								<source data-srcset="img/top/taksa.webp"
+									srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+									type="image/webp"><img
+									src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+									data-src="img/top/taksa.png" alt="dog">
+							</picture>
+						</div>
+					</div>
+				</div>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+					<path fill-opacity="1"
+						d="M0,160L120,181.3C240,203,480,245,720,261.3C960,277,1200,267,1320,261.3L1440,256L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
+					</path>
+				</svg>
+			</section>
+			<!-- /**================**
+					**"kind"*
+			===================*/ -->
+			<section class="kind">
+				<div class="blob"><span></span></div>
+				<div class="blob-big"></div>
+				<div class="kind__container">
+					<h2 class="kind__title title">
+						We work with all animals
+					</h2>
+					<p class="kind__description description">Careful and extremely caring attitude is the most important principle
+						in the work of each of our specialists in the animal clinic. We guarantee an attentive and responsible
+						approach to work, we are not afraid of difficulties and will do everything possible for the health of your
+						pet!
+					</p>
+					<!-- Оболочка слайдера -->
+					<div class="kind__slider swiper">
+						<!-- Двигающееся часть слайдера -->
+						<div class="kind__wrapper swiper-wrapper">
+							<!-- Слайд -->
+							<div class="kind__slide swiper-slide" data-slider-title="dog">
+								<picture>
+									<source srcset="img/kind/taksa.webp" type="image/webp"><img class="kind__slider-image"
+										src="img/kind/taksa.png" alt="dog">
+								</picture>
+							</div>
+							<div class="kind__slide swiper-slide" data-slider-title="cat">
+								<picture>
+									<source srcset="img/kind/cat.webp" type="image/webp"><img class="kind__slider-image"
+										src="img/kind/cat.png" alt="cat">
+								</picture>
+							</div>
+							<div class="kind__slide swiper-slide" data-slider-title="bird">
+								<picture>
+									<source srcset="img/kind/bird.webp" type="image/webp"><img class="kind__slider-image"
+										src="img/kind/bird.png" alt="bird">
+								</picture>
+							</div>
+							<div class="kind__slide swiper-slide " data-slider-title="horse">
+								<picture>
+									<source srcset="img/kind/horse.webp" type="image/webp"><img class="kind__slider-image"
+										src="img/kind/horse.png" alt="horse">
+								</picture>
+							</div>
+							<div class="kind__slide swiper-slide " data-slider-title="rabbit">
+								<picture>
+									<source srcset="img/kind/rabbit.webp" type="image/webp"><img class="kind__slider-image"
+										src="img/kind/rabbit.png" alt="rabbit">
+								</picture>
+							</div>
+						</div>
+						<!-- Если нужна навигация (влево/вправо) -->
+						<div class="kind__slider-buttons">
+							<button type="button" class="kind__swiper-button-prev swiper-button-prev">
+								<img class="slider__arrow slider__arrow-left" src="img/kind/arrow_left.svg" alt="">
+							</button>
+							<button type="button" class="kind__swiper-button-next swiper-button-next">
+								<img class="slider__arrow slider__arrow-right" src="img/kind/arrow_right.svg" alt="">
+							</button>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<!-- /**================**
+					**"services"*
+			===================*/ -->
+			<section class="services">
+				<div class="round"></div>
+				<svg class="line-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 974.8 1484.65">
+					<path class="line-1"
+						d="M128,373c51.11,1.93,164.08,13.6,266,94,64.47,50.86,97.1,107.6,126,159,67.53,120.11,82.92,227.77,96,326,0,0,24.8,186.21-20,370-4.5,18.47-16.85,64.26-53,106-22.91,26.45-42,35.86-49,39-9,4-45.74,20.62-86,6-32.75-11.9-70.24-45.31-65-76,6.65-38.94,78.49-52.46,92-55,41.46-7.8,112.28-8.44,232,67,74.34,46.84,122.56,94.68,221,203,57.23,63,130.42,145.27,214,244"
+						transform="translate(-127.96 -372)" />
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">
+					<path fill-opacity="1"
+						d="M0,128L80,128C160,128,320,128,480,117.3C640,107,800,85,960,96C1120,107,1280,149,1360,170.7L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+					</path>
+				</svg>
+				<div class="services__container">
+					<h2 class="services__title title">
+						Veterinary clinic "Pet-Expert" is extremely transparent in terms of pricing.
+					</h2>
+					<p class="services__description description">The established prices of veterinary services will pleasantly
+						please you with the availability, which is combined with impeccable service and high quality of the
+						procedures performed.
+					</p>
+					<div class="services__tabs">
+						<div data-tabs="768" class="tabs">
+							<nav data-tabs-titles class="tabs__navigation">
+								<button type="button" class="tabs__title _tab-active ">
+										<span class="tabs__title-image _icon-vac"></span>
+										<span>Vaccine</span>
+								</button>
+								<button type="button" class="tabs__title">
+
+										<span class="tabs__title-image _icon-tablet"></span>
+										<span>Microchip</span>
+
+								</button>
+								<button type="button" class="tabs__title">
+
+										<span class="tabs__title-image _icon-kirurg"></span>
+										<span>Surgery</span>
+
+								</button>
+								<button type="button" class="tabs__title">
+
+										<span class="tabs__title-image _icon-case"></span>
+										<span>Pet dentistry</span>
+
+								</button>
+								<button type="button" class="tabs__title">
+
+										<span class="tabs__title-image _icon-microscope"></span>
+										<span>Diagnostics</span>
+
+								</button>
+								<button type="button" class="tabs__title">
+
+										<span class="tabs__title-image _icon-noz"></span>
+										<span>Parasite prevention</span>
+
+								</button>
+							</nav>
+							<div data-tabs-body class="tabs__content">
+								<div class="tabs__body">
+									<div class="tabs__inner">
+										<div class="tabs__content-image">
+											<picture>
+												<source srcset="img/services/vaccine.webp" type="image/webp"><img src="img/services/vaccine.jpg"
+													alt="vaccine">
+											</picture>
+										</div>
+										<div class="tabs__content-desc">
+											<h5>Vaccine</h5>
+											<ul class="tabs__content-list">
+												<li class="tabs__content-listitem">
+													Spay and neuter <span>33$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Mass and lump removal <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Foreign body removal <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Laceration and trauma repair <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Cystotomy—bladder stone removal <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Ophthalmic (eyelid) surgery <span>15$</span>
+												</li>
+											</ul>
+											<div class="tabs__button-wrapper">
+												<button type="submit" class="tabs__button button button_violet" data-popup="#popup">Make an
+													appointment</button>
+												<button type="submit" data-popup="#popup-prices" class="button">All prices</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tabs__body">
+									<div class="tabs__inner">
+										<div class="tabs__content-image">
+											<picture>
+												<source srcset="img/services/microchip.webp" type="image/webp"><img
+													src="img/services/microchip.jpg" alt="vaccine">
+											</picture>
+										</div>
+										<div class="tabs__content-desc">
+											<h5>Microchip</h5>
+											<ul class="tabs__content-list">
+												<li class="tabs__content-listitem">
+													Foreign body removal <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Laceration and trauma repair <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Cystotomy—bladder stone removal <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Ophthalmic (eyelid) surgery <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Gastropexy—to treat gastric dilatation and volvulus ("bloat") <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Splenectomy—spleen removal <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Amputations <span>15$</span>
+												</li>
+											</ul>
+											<div class="tabs__button-wrapper">
+												<button type="submit" data-popup="#popup" class="tabs__button button button_violet">Make an
+													appointment</button>
+												<button type="submit" data-popup="#popup-prices" class="button">All prices</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tabs__body">
+									<div class="tabs__inner">
+										<div class="tabs__content-image">
+											<picture>
+												<source srcset="img/services/surgery.webp" type="image/webp"><img src="img/services/surgery.jpg"
+													alt="surgery">
+											</picture>
+										</div>
+										<div class="tabs__content-desc">
+											<h5>Surgery</h5>
+											<ul class="tabs__content-list">
+												<li class="tabs__content-listitem">
+													Spay and neuter <span>33$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Mass and lump removal <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Foreign body removal <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Laceration and trauma repair <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Gastropexy—to treat gastric dilatation and volvulus ("bloat") <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Splenectomy—spleen removal <span>15$</span>
+												</li>
+											</ul>
+											<div class="tabs__button-wrapper">
+												<button type="submit" data-popup="#popup" class="tabs__button button button_violet">Make an
+													appointment</button>
+												<button type="submit" data-popup="#popup-prices" class="button">All prices</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tabs__body">
+									<div class="tabs__inner">
+										<div class="tabs__content-image">
+											<picture>
+												<source srcset="img/services/dentistry.webp" type="image/webp"><img
+													src="img/services/dentistry.jpg" alt="Pet dentistry">
+											</picture>
+										</div>
+										<div class="tabs__content-desc">
+											<h5>Pet dentistry</h5>
+											<ul class="tabs__content-list">
+												<li class="tabs__content-listitem">
+													Ophthalmic (eyelid) surgery <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Gastropexy—to treat gastric dilatation and volvulus ("bloat") <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Splenectomy—spleen removal <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Amputations <span>15$</span>
+												</li>
+											</ul>
+											<div class="tabs__button-wrapper">
+												<button type="submit" data-popup="#popup" class="tabs__button button button_violet">Make an
+													appointment</button>
+												<button type="submit" data-popup="#popup-prices" class="button">All prices</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tabs__body">
+									<div class="tabs__inner">
+										<div class="tabs__content-image">
+											<picture>
+												<source srcset="img/services/diagnostic.webp" type="image/webp"><img
+													src="img/services/diagnostic.jpg" alt="Diagnostics">
+											</picture>
+										</div>
+										<div class="tabs__content-desc">
+											<h5>Diagnostics</h5>
+											<ul class="tabs__content-list">
+												<li class="tabs__content-listitem">
+													Spay and neuter <span>33$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Mass and lump removal <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Foreign body removal <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Laceration and trauma repair <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Cystotomy—bladder stone removal <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Ophthalmic (eyelid) surgery <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Gastropexy—to treat gastric dilatation and volvulus ("bloat") <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Splenectomy—spleen removal <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Amputations <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Amputations <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Amputations <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Amputations <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Amputations <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Amputations <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Amputations <span>15$</span>
+												</li>
+												<li class="tabs__content-listitem">
+													Amputations <span>15$</span>
+												</li>
+											</ul>
+											<div class="tabs__button-wrapper">
+												<button type="submit" data-popup="#popup" class="tabs__button button button_violet">Make an
+													appointment</button>
+												<button type="submit" data-popup="#popup-prices" class="button">All prices</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tabs__body">
+									<div class="tabs__inner">
+										<div class="tabs__content-image">
+											<picture>
+												<source srcset="img/services/parasite.webp" type="image/webp"><img
+													src="img/services/parasite.jpg" alt="Parasite prevention">
+											</picture>
+										</div>
+										<div class="tabs__content-desc">
+											<h5>Parasite prevention</h5>
+											<ul class="tabs__content-list">
+												<li class="tabs__content-listitem">
+													Spay and neuter <span>33$</span>
+												</li>
+											</ul>
+											<div class="tabs__button-wrapper">
+												<button type="submit" data-popup="#popup" class="tabs__button button button_violet">Make an
+													appointment</button>
+												<button type="submit" data-popup="#popup-prices" class="button">All prices</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /**================**
+					**"advantage"*
+			===================*/ -->
+			<section class="advantage">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+					<path fill-opacity="1"
+						d="M0,192L120,197.3C240,203,480,213,720,213.3C960,213,1200,203,1320,197.3L1440,192L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z">
+					</path>
+				</svg>
+				<div class="blob-big_dark"></div>
+				<div class="advantage__container">
+					<h2 class="advantage__title title">
+						We have great respect for the human-animal bond
+					</h2>
+					<p class="advantage__description description">We know that taking your pet to the vet can be stressful. We
+						practice a low-stress philosophy to minimize anxiety and maximize safety for all our pet patients.
+					</p>
+					<div class="advantage__items">
+						<div class="item">
+							<div class="item__number">-20%</div>
+							<div class="item__description">
+								<p class="description">
+									Your attention is represented by premium class food in different price categories.
+								</p>
+							</div>
+
+						</div>
+						<div class="item">
+							<div class="item__number item_yellow">24/7</div>
+							<div class="item__description">
+								<p class=" description">
+									We guarantee an attentive and responsible approach to work, we are not afraid of difficulties and will
+									do everything possible for the health of your pet!
+								</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item__number item_violet">26</div>
+							<div class="item__description">
+								<p class="description">
+									During our work, we have formed a team of experienced specialists and a modern material and technical
+									base with the best diagnostic equipment.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /**================**
+					**"Staff"*
+			===================*/ -->
+			<section class="staff">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
+					<path fill-opacity="1"
+						d="M0,96L60,90.7C120,85,240,75,360,80C480,85,600,107,720,101.3C840,96,960,64,1080,53.3C1200,43,1320,53,1380,58.7L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+					</path>
+				</svg>
+				<div class="blob staff__blob blob_rose"><span></span></div>
+				<div class="staff__container">
+					<h2 class="staff__title title">
+						Team of experienced professionals who sincerely love our four-legged brothers.
+					</h2>
+					<p class="staff__description description">Animal clinic "Pet-Expert" invite you to get to know the doctors who
+						work in our clinic. Everyone at Clinic is a pet lover at heart, and we are committed to providing the
+						highest standard of care for your cherished pet.
+					</p>
+					<div class="staff__block">
+						<!-- /**================**
+								?slider-thumbs"*
+						===================*/ -->
+						<!-- Оболочка слайдера -->
+						<div class="staff-thumbs__slider swiper">
+							<!-- Двигающееся часть слайдера -->
+							<div class="staff-thumbs__wrapper swiper-wrapper">
+								<!-- Слайд -->
+								<div class="staff-thumbs__slide swiper-slide">
+									<div class="dthumb-item">
+										<picture>
+											<source srcset="img/staff/1-1.webp" type="image/webp"><img src="img/staff/1-1.png" alt="min"
+												class="dthumb-image">
+										</picture>
+										<div class="dthumb-body">
+											<h5 class="dthumb-name">Alex Nils</h5>
+											<p class="dthumb-job">Veterinary Technician</p>
+										</div>
+										<button class="dthumb__button _icon-arrow-up" data-popup="#popup-home-doctor"></button>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="staff-thumbs__slide swiper-slide">
+									<div class="dthumb-item">
+										<picture>
+											<source srcset="img/staff/2-1.webp" type="image/webp"><img src="img/staff/2-1.png" alt="min"
+												class="dthumb-image">
+										</picture>
+										<div class="dthumb-body">
+											<h5 class="dthumb-name">Alex Nils</h5>
+											<p class="dthumb-job">Veterinary Technician</p>
+										</div>
+										<button class="dthumb__button _icon-arrow-up" data-popup="#popup-home-doctor"></button>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="staff-thumbs__slide swiper-slide">
+									<div class="dthumb-item">
+										<picture>
+											<source srcset="img/staff/3-1.webp" type="image/webp"><img src="img/staff/3-1.png" alt="min"
+												class="dthumb-image">
+										</picture>
+										<div class="dthumb-body">
+											<h5 class="dthumb-name">Alex Nils</h5>
+											<p class="dthumb-job">Veterinary Technician</p>
+										</div>
+										<button class="dthumb__button _icon-arrow-up" data-popup="#popup-home-doctor"></button>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="staff-thumbs__slide swiper-slide">
+									<div class="dthumb-item">
+										<picture>
+											<source srcset="img/staff/5-1.webp" type="image/webp"><img src="img/staff/5-1.png" alt="min"
+												class="dthumb-image">
+										</picture>
+										<div class="dthumb-body">
+											<h5 class="dthumb-name">Alex Nils</h5>
+											<p class="dthumb-job">Veterinary Technician</p>
+										</div>
+										<button class="dthumb__button _icon-arrow-up" data-popup="#popup-home-doctor"></button>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="staff-thumbs__slide swiper-slide">
+									<div class="dthumb-item">
+										<picture>
+											<source srcset="img/staff/6-1.webp" type="image/webp"><img src="img/staff/6-1.png" alt="min"
+												class="dthumb-image">
+										</picture>
+										<div class="dthumb-body">
+											<h5 class="dthumb-name">Alex Nils</h5>
+											<p class="dthumb-job">Veterinary Technician</p>
+										</div>
+										<button class="dthumb__button _icon-arrow-up" data-popup="#popup-home-doctor"></button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /**================**
+								?"slider"*
+						===================*/ -->
+						<!-- Оболочка слайдера -->
+						<div class="staff__slider swiper">
+							<!-- Двигающееся часть слайдера -->
+							<div class=" swiper-wrapper staff__wrapper">
+								<!-- Слайд -->
+								<div class="staff__slide swiper-slide">
+									<div class="dcart">
+										<img src="img/staff/1.png" alt="doctor" class="dcart__image">
+										<div class="dcart__bg">
+											<div class="dcart__content">
+												<h5 class="dcart__title">Taja Kan</h5>
+												<p class="dcart__text">Dermatology, therapy</p>
+												<p class="dcart__description description">Graduated from the University of Natural Sciences,
+													Institute of Veterinary Medicine and Animal Husbandry.</p>
+												<button type="submit" data-popup="#popup-home-doctor" class="button">home doctor</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="staff__slide swiper-slide">
+									<div class="dcart">
+										<img src="img/staff/2.png" alt="doctor" class="dcart__image">
+										<div class="dcart__bg">
+											<div class="dcart__content">
+												<h5 class="dcart__title">Taja Kan</h5>
+												<p class="dcart__text">Dermatology, therapy</p>
+												<p class="dcart__description description">Graduated from the University of Natural Sciences,
+													Institute of Veterinary Medicine and Animal Husbandry.</p>
+												<button type="submit" data-popup="#popup-home-doctor" class="button">home doctor</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="staff__slide swiper-slide">
+									<div class="dcart">
+										<img src="img/staff/3.png" alt="doctor" class="dcart__image">
+										<div class="dcart__bg">
+											<div class="dcart__content">
+												<h5 class="dcart__title">Taja Kan</h5>
+												<p class="dcart__text">Dermatology, therapy</p>
+												<p class="dcart__description description">Graduated from the University of Natural Sciences,
+													Institute of Veterinary Medicine and Animal Husbandry.</p>
+												<button type="submit" data-popup="#popup-home-doctor" class="button">home doctor</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="staff__slide swiper-slide">
+									<div class="dcart">
+										<img src="img/staff/5.png" alt="doctor" class="dcart__image">
+										<div class="dcart__bg">
+											<div class="dcart__content">
+												<h5 class="dcart__title">Taja Kan</h5>
+												<p class="dcart__text">Dermatology, therapy</p>
+												<p class="dcart__description description">Graduated from the University of Natural Sciences,
+													Institute of Veterinary Medicine and Animal Husbandry.</p>
+												<button type="submit" data-popup="#popup-home-doctor" class="button">home doctor</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Слайд -->
+								<div class="staff__slide swiper-slide">
+									<div class="dcart">
+										<img src="img/staff/6.png" alt="doctor" class="dcart__image">
+										<div class="dcart__bg">
+											<div class="dcart__content">
+												<h5 class="dcart__title">Taja Kan</h5>
+												<p class="dcart__text">Dermatology, therapy</p>
+												<p class="dcart__description description">Graduated from the University of Natural Sciences,
+													Institute of Veterinary Medicine and Animal Husbandry.</p>
+												<button type="submit" data-popup="#popup-home-doctor" class="button">home doctor</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div></div>
+						<!-- Если нужна навигация (влево/вправо) -->
+						<div class="staff-thumbs__slider-buttons">
+							<button type="button" class="staff__swiper-button-prev swiper-button-prev">
+								<img class="slider__arrow slider__arrow-left" src="img/kind/arrow_left.svg" alt="">
+							</button>
+							<button type="button" class="staff__swiper-button-next swiper-button-next">
+								<img class="slider__arrow slider__arrow-right" src="img/kind/arrow_right.svg" alt="">
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /**================**
+					**"Testemonials"*
+			===================*/ -->
+			<section class="testemonials">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
+					<path fill-opacity="1"
+						d="M0,128L120,112C240,96,480,64,720,64C960,64,1200,96,1320,112L1440,128L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z">
+					</path>
+				</svg>
+				<div class="testemonials__container">
+					<h2 class="testemonials__title title">
+						What Our Customers Have to Say
+					</h2>
+					<!-- Оболочка слайдера -->
+					<div class="testemonials__slider swiper">
+						<!-- Двигающееся часть слайдера -->
+						<div class="testemonials__wrapper swiper-wrapper">
+							<!-- Слайд -->
+							<div class="testemonials__slide swiper-slide">
+								<div class="rate">
+									<h5>Rate Us Please</h5>
+									<div class="testemonial__rating rating rating_set">
+										<div class="rating__body">
+											<div class="rating__active"></div>
+											<div class="rating__items"><input type="radio" class="rating__item" value="1" name="rating"><input
+													type="radio" class="rating__item" value="2" name="rating"><input type="radio"
+													class="rating__item" value="3" name="rating"><input type="radio" class="rating__item"
+													value="4" name="rating"><input type="radio" class="rating__item" value="5" name="rating">
+											</div>
+										</div>
+										<div class="rating__value"></div>
+									</div>
+									<button type="submit" data-popup="#popup-testemonial" class="rate__button button button_violet">write
+										a feedback</button>
+								</div>
+							</div>
+							<!-- Слайд -->
+							<div class="testemonials__slide swiper-slide">
+								<div class="testemonial">
+									<h5>Boris</h5>
+									<div class="testemonial__rating rating rating_set">
+										<div class="rating__body">
+											<div class="rating__active"></div>
+											<div class="rating__items"><input type="radio" class="rating__item" value="1" name="rating"><input
+													type="radio" class="rating__item" value="2" name="rating"><input type="radio"
+													class="rating__item" value="3" name="rating"><input type="radio" class="rating__item"
+													value="4" name="rating"><input type="radio" class="rating__item" value="5" name="rating">
+											</div>
+										</div>
+										<div class="rating__value">4.6</div>
+									</div>
+									<p class="description">"Dr Sullivan was great and really took the time to understand my dogs' issues
+										and explain treatment options to me. I feel much better about their care since I switched to your
+										clinic."</p>
+								</div>
+							</div>
+							<!-- Слайд -->
+							<div class="testemonials__slide swiper-slide">
+								<div class="testemonial">
+									<h5>Boris</h5>
+									<div class="testemonial__rating rating rating_set">
+										<div class="rating__body">
+											<div class="rating__active"></div>
+											<div class="rating__items"><input type="radio" class="rating__item" value="1" name="rating"><input
+													type="radio" class="rating__item" value="2" name="rating"><input type="radio"
+													class="rating__item" value="3" name="rating"><input type="radio" class="rating__item"
+													value="4" name="rating"><input type="radio" class="rating__item" value="5" name="rating">
+											</div>
+										</div>
+										<div class="rating__value">4.6</div>
+									</div>
+									<p class="description">"Very friendly and knowledgeable staff who treated my dog like their own. The
+										environment was very clean and calming for my pet. Would highly recommend this clinic to friends and
+										family. "</p>
+								</div>
+							</div>
+							<!-- Слайд -->
+							<div class="testemonials__slide swiper-slide">
+								<div class="testemonial">
+									<h5>Boris</h5>
+									<div class="testemonial__rating rating rating_set">
+										<div class="rating__body">
+											<div class="rating__active"></div>
+											<div class="rating__items"><input type="radio" class="rating__item" value="1" name="rating"><input
+													type="radio" class="rating__item" value="2" name="rating"><input type="radio"
+													class="rating__item" value="3" name="rating"><input type="radio" class="rating__item"
+													value="4" name="rating"><input type="radio" class="rating__item" value="5" name="rating">
+											</div>
+										</div>
+										<div class="rating__value">4</div>
+									</div>
+									<p class="description">"You guys are so attentive, respectful, professional, and knowledgeable. I
+										wouldn't change to any other practice because my pet won't get better treatment anywhere else! "</p>
+								</div>
+							</div>
+							<!-- Слайд -->
+							<div class="testemonials__slide swiper-slide">
+								<div class="testemonial">
+									<h5>Lera</h5>
+									<div class="testemonial__rating rating rating_set">
+										<div class="rating__body">
+											<div class="rating__active"></div>
+											<div class="rating__items"><input type="radio" class="rating__item" value="1" name="rating"><input
+													type="radio" class="rating__item" value="2" name="rating"><input type="radio"
+													class="rating__item" value="3" name="rating"><input type="radio" class="rating__item"
+													value="4" name="rating"><input type="radio" class="rating__item" value="5" name="rating">
+											</div>
+										</div>
+										<div class="rating__value">3.5</div>
+									</div>
+									<p class="description">"Was great and really took the time to understand my dogs' issues
+										and explain treatment options to me."</p>
+								</div>
+							</div>
+							<!-- Слайд -->
+							<div class="testemonials__slide swiper-slide">
+								<div class="testemonial">
+									<h5>Simon</h5>
+									<div class="testemonial__rating rating rating_set">
+										<div class="rating__body">
+											<div class="rating__active"></div>
+											<div class="rating__items"><input type="radio" class="rating__item" value="1" name="rating"><input
+													type="radio" class="rating__item" value="2" name="rating"><input type="radio"
+													class="rating__item" value="3" name="rating"><input type="radio" class="rating__item"
+													value="4" name="rating"><input type="radio" class="rating__item" value="5" name="rating">
+											</div>
+										</div>
+										<div class="rating__value">5</div>
+									</div>
+									<p class="description">"I feel much better about their care since I switched to your
+										clinic."</p>
+								</div>
+							</div>
+							<!-- Слайд -->
+							<div class="testemonials__slide swiper-slide">
+								<div class="testemonial">
+									<h5>Clark</h5>
+									<div class="testemonial__rating rating rating_set">
+										<div class="rating__body">
+											<div class="rating__active"></div>
+											<div class="rating__items"><input type="radio" class="rating__item" value="1" name="rating"><input
+													type="radio" class="rating__item" value="2" name="rating"><input type="radio"
+													class="rating__item" value="3" name="rating"><input type="radio" class="rating__item"
+													value="4" name="rating"><input type="radio" class="rating__item" value="5" name="rating">
+											</div>
+										</div>
+										<div class="rating__value">4.9</div>
+									</div>
+									<p class="description">"Dr Sullivan was great and really took the time to understand my dogs' issues
+										and explain treatment options to me. I feel much better about their care since I switched to your
+										clinic."</p>
+								</div>
+							</div>
+							<!-- Слайд -->
+							<div class="testemonials__slide swiper-slide">
+								<div class="testemonial">
+									<h5>Tom</h5>
+									<div class="testemonial__rating rating rating_set">
+										<div class="rating__body">
+											<div class="rating__active"></div>
+											<div class="rating__items"><input type="radio" class="rating__item" value="1" name="rating"><input
+													type="radio" class="rating__item" value="2" name="rating"><input type="radio"
+													class="rating__item" value="3" name="rating"><input type="radio" class="rating__item"
+													value="4" name="rating"><input type="radio" class="rating__item" value="5" name="rating">
+											</div>
+										</div>
+										<div class="rating__value">4.5</div>
+									</div>
+									<p class="description">"Dr Sullivan was great and really took the time to understand my dogs' issues
+										and explain treatment options to me. I feel much better about their care since I switched to your
+										clinic."</p>
+								</div>
+							</div>
+							<!-- Слайд -->
+							<div class="testemonials__slide swiper-slide">
+								<div class="testemonial">
+									<h5>Ann</h5>
+									<div class="testemonial__rating rating rating_set">
+										<div class="rating__body">
+											<div class="rating__active"></div>
+											<div class="rating__items"><input type="radio" class="rating__item" value="1" name="rating"><input
+													type="radio" class="rating__item" value="2" name="rating"><input type="radio"
+													class="rating__item" value="3" name="rating"><input type="radio" class="rating__item"
+													value="4" name="rating"><input type="radio" class="rating__item" value="5" name="rating">
+											</div>
+										</div>
+										<div class="rating__value">4</div>
+									</div>
+									<p class="description">"Dr Sullivan was great and really took the time to understand my dogs' issues
+										and explain treatment options to me. I feel much better about their care since I switched to your
+										clinic."</p>
+								</div>
+							</div>
+							<!-- Слайд -->
+							<div class="testemonials__slide swiper-slide">
+								<div class="testemonial">
+									<h5>Julia</h5>
+									<div class="testemonial__rating rating rating_set">
+										<div class="rating__body">
+											<div class="rating__active"></div>
+											<div class="rating__items"><input type="radio" class="rating__item" value="1" name="rating"><input
+													type="radio" class="rating__item" value="2" name="rating"><input type="radio"
+													class="rating__item" value="3" name="rating"><input type="radio" class="rating__item"
+													value="4" name="rating"><input type="radio" class="rating__item" value="5" name="rating">
+											</div>
+										</div>
+										<div class="rating__value">4.6</div>
+									</div>
+									<p class="description">"Very good clinic. I recommend it"</p>
+								</div>
+							</div>
+						</div>
+						<!-- Если нужна пагинация -->
+						<div class="testemonial__swiper-pagination swiper-pagination"></div>
+					</div>
+				</div>
+			</section>
+			<div class="button-up _icon-arrow-up">
+			</div>
+		</main>
+		<footer class="footer">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300">
+				<path fill-opacity="1"
+					d="M0,256L120,250.7C240,245,480,235,720,234.7C960,235,1200,245,1320,250.7L1440,256L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z">
+				</path>
+			</svg>
+			<div class="footer__container">
+				<div class="footer__col">
+					<h2 class="footer__title title">
+						Contacts
+					</h2>
+					<p class="footer__description description">We will answer your questions
+					</p>
+					<div class="footer__button-wrapper">
+						<button type="submit" data-popup="#popup" class="footer__button button button_violet">Contact Us</button>
+					</div>
+					<div class="footer__contact-items">
+						<div class="footer__contact-item phone">
+							<div class="phone-image _icon-mobile"></div>
+							<a href="tel:" class="phone-text ">(312) 26-2008</a>
+						</div>
+						<div class="footer__contact-item location">
+							<div class="phone-image _icon-location"></div>
+							<p class="location-text">242 W. Harron St., Suite 1, Chicago, IL 6612</p>
+						</div>
+						<div class="footer__contact-item time">
+							<div class="phone-image _icon-clock"></div>
+							<p class="time-text">We work 24/7</p>
+						</div>
+					</div>
+
+					<div class="footer__soc">
+						<div class="social">
+							<a href="#">
+								<div class="social__icon _icon-facebook"></div>
+							</a>
+						</div>
+						<div class="social">
+							<a href="#">
+								<div class="social__icon _icon-twitter"></div>
+							</a>
+						</div>
+						<div class="social">
+							<a href="#">
+								<div class="social__icon _icon-instagram"></div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="footer__col-right">
+					<div class="footer__map">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23771.86380181758!2d-87.71193090884849!3d41.860954126802476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2d7e91e2d89d%3A0x913cfb00c3442638!2z0JTRg9Cz0LvQsNGBINCf0LDRgNC6LCDQp9C40LrQsNCz0L4sINCY0LvQu9C40L3QvtC50YEsINCh0KjQkA!5e0!3m2!1sru!2see!4v1664262438037!5m2!1sru!2see"
+							width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</div>
+			</div>
+			<p class="copy">Copyright © 2022 Pet-Expert Clinic. All rights reserved. Website by
+				<a class="footer__author-link" href="http://www.mihhaljov.pro">Dmitri Mihhaljov</a>.
+			</p>
+		</footer>
+	</div>
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<h5 class="popup__title">
+					Make an appointment
+				</h5>
+				<form class="popup__form" action="#" method="post" data-dev data-popup-message="#form-message">
+					<input autocomplete="off" type="text" name="form[]" data-validate data-required data-error="check the fields"
+						placeholder="Name" class="input">
+					<input autocomplete="off" type="tel" name="form[]" data-validate data-required data-error="check the fields"
+						placeholder="Phone number" class="input">
+					<p class="popup__description">Select an available date and time</p>
+					<div class="popup__dates">
+						<input class="popup__date" data-datepicker type="text" name="form[]" placeholder="Date">
+						<select class="popup__time" data-class-modif="form" name="form[]">
+							<option selected disabled value="">Time</option>
+							<option value="1">11:00 AM</option>
+							<option value="2">12:00 AM</option>
+							<option value="3">1:00 PM</option>
+							<option value="4">2:00 PM</option>
+							<option value="5">3:00 PM</option>
+							<option value="6">4:00 PM</option>
+							<option value="7">5:00 PM</option>
+							<option value="8">6:00 PM</option>
+							<option value="9">7:00 PM</option>
+							<option value="10">8:00 PM</option>
+							<option value="11">9:00 PM</option>
+							<option value="12">10:00 PM</option>
+						</select>
+					</div>
+					<button type="submit" class="popup__button button">Make an appointment</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="popup-home-doctor" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<h5 class="popup__title">
+					Call a doctor at home
+				</h5>
+				<form class="popup__form" action="#" method="post" data-dev data-popup-message="#form-message">
+					<input autocomplete="off" type="text" name="form[]" data-validate data-required data-error="check the fields"
+						placeholder="Name" class="input">
+					<input autocomplete="off" type="tel" name="form[]" data-dev data-validate data-required
+						data-error="check the fields" placeholder="Phone number" class="input">
+					<textarea class="popup__textarea input" data-dev data-validate data-required data-error="check the fields"
+						placeholder="Describe your problem." cols="30" rows="10"></textarea>
+					<p class="popup__description">We will contact you as soon as possible</p>
+					<button type="submit" class="popup__button button">Home Doctor</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="popup-testemonial" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<h5 class="popup__title">
+					Leave a review about our clinic
+				</h5>
+				<form class="popup__form" action="#" method="post" data-dev data-popup-message="#form-message">
+					<input autocomplete="off" type="text" name="form[]" data-validate data-required data-error="check the fields"
+						placeholder="Name" class="input">
+					<textarea class="popup__textarea input" data-dev data-validate data-required data-error="check the fields"
+						placeholder="Describe your problem." cols="30" rows="10"></textarea>
+					<button type="submit" class="popup__button button">Post a review</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="popup-prices" aria-hidden="true" class="popup__prices popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__text">
+					<h4>Our prices</h4>
+					<ul>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+						<li>Dentist <span>15$</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="form-message" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__text">
+					<h4>Thank's</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20221004123017"></script>
+</body>
+
+</html>
