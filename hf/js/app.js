@@ -4388,6 +4388,60 @@
                 }
                 if (targetElement.classList.contains("search-form__icon")) document.querySelector(".search-inner").classList.toggle("_active"); else if (!targetElement.closest(".search-inner") && document.querySelector(".search-inner._active")) document.querySelector(".search-inner").classList.remove("_active");
                 if (!targetElement.closest(".icon-menu") && document.querySelector(".menu-open") && !targetElement.closest(".header__menu")) functions_menuClose();
+                if (targetElement.classList.contains("product__button")) loadCards(targetElement);
+                if (targetElement.classList.contains("card__cart") || targetElement.classList.contains("card__add")) {
+                    targetElement.classList.toggle("_added");
+                    addToCard(targetElement);
+                }
+            }
+            async function getResource(url) {
+                let response = await fetch(url, {
+                    method: "GET"
+                });
+                if (!response.ok) throw new Error(`Could not fetch ${url}, status: ${response.status}`);
+                return response.json();
+            }
+            function loadCards(button) {
+                if (!button.classList.contains("_hold")) button.classList.add("_hold");
+                class productCard {
+                    constructor(url, alt, labelSale, labelRed, title, description, price, oldPrice, parentSelector, ...classes) {
+                        this.url = url;
+                        this.alt = alt;
+                        this.sale = labelSale;
+                        this.labelRed = labelRed;
+                        this.title = title;
+                        this.description = description;
+                        this.price = price;
+                        this.oldPrice = oldPrice;
+                        this.parent = document.querySelector(parentSelector);
+                        this.classes = classes;
+                    }
+                    render() {
+                        const element = document.createElement("article");
+                        if (0 === this.classes.length) {
+                            this.classes = "card";
+                            element.classList.add(this.classes);
+                        } else this.classes.forEach((className => {
+                            element.classList.add(className);
+                        }));
+                        element.innerHTML = `\n\t\t\t<div class="card__imageBx">\n\t\t\t<div class="card__image-ibg">\n\t\t\t\t<img src=${this.url} alt=${this.alt}>\n\t\t\t</div>\n\t\t\t<div class="card__labels">\n            ${this.sale}\n\t\t\t${this.labelRed}\n\t\t\t</div>\n\t\t    </div>\n\t\t    <a href="#" class="card__link">\n\t\t\t<div class="card__contentBx">\n\t\t\t\t<h4 class="card__title">${this.title}</h4>\n\t\t\t\t<p class="card__text">${this.description}</p>\n\t\t\t\t<p class="card__price">$${this.price}\n\t\t\t\t${this.oldPrice}\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t    </a>\n\t\t    <div class="card__buttonsBx">\n\t\t\t<button class="card__add button">Add to cart</button>\n\t\t\t<div class="card__favBx">\n\t\t\t\t<button class="card__cart _icon-cart">Cart</button>\n\t\t\t\t<button class="card__share _icon-share">Share</button>\n\t\t\t\t<button class="card__like _icon-heart">Like</button>\n\t\t\t</div>\n\t\t    </div>\n\t\t\t`;
+                        this.parent.append(element);
+                    }
+                }
+                getResource("http://localhost:3000/product").then((data => {
+                    data.forEach((({url, alt, labelSale, labelRed, title, description, price, oldPrice}) => {
+                        new productCard(url, alt, labelSale, labelRed, title, description, price, oldPrice, ".product .product__block").render();
+                    }));
+                }));
+            }
+            function addToCard(button) {
+                const cardItems = [];
+                const cardIcon = document.querySelector(".cart");
+                const span = document.createElement("span");
+                let i = 1;
+                cardItems.push(i);
+                span.innerHTML = `${cardItems}`;
+                cardIcon.append(span);
             }
         };
         window["FLS"] = true;
