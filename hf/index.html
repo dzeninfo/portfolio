@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221012211623">
+	<link rel="stylesheet" href="css/style.min.css">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,10 +78,12 @@
 					</div>
 					<div class="header__r-block">
 						<button class="favorite _icon-heart"></button>
-						<button class="cart _icon-cart"><span>1</span></button>
+						<button class="cart _icon-cart">
+							<!-- <span>1</span> -->
+						</button>
 						<div class="user">
 							<button class="user__button">
-								<picture><source srcset="img/header/user.webp" type="image/webp"><img class="user__image" src="img/header/user.png" alt="image"></picture>
+								<img class="user__image" src="img/header/user.png" alt="image">
 							</button>
 						</div>
 					</div>
@@ -119,7 +121,7 @@
 
 									<div class="main-slider__slide swiper-slide">
 										<div class="main-slider__image-ibg">
-											<picture><source srcset="img/home/1.webp" type="image/webp"><img src="img/home/1.jpg" alt="image"></picture>
+											<img src="img/home/1.jpg" alt="image">
 										</div>
 										<a href="#" class="main-slider__card-link link-card" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%">
 											<h3 class="link-card__title">Bohauss</h3>
@@ -130,7 +132,7 @@
 
 									<div class="main-slider__slide swiper-slide">
 										<div class="main-slider__image-ibg">
-											<picture><source srcset="img/home/2.webp" type="image/webp"><img src="img/home/2.jpg" alt="image"></picture>
+											<img src="img/home/2.jpg" alt="image">
 										</div>
 										<a href="#" class="main-slider__card-link link-card" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%">
 											<h3 class="link-card__title">Bohauss</h3>
@@ -141,7 +143,7 @@
 
 									<div class="main-slider__slide swiper-slide">
 										<div class="main-slider__image-ibg">
-											<picture><source srcset="img/home/3.webp" type="image/webp"><img src="img/home/3.jpg" alt="image"></picture>
+											<img src="img/home/3.jpg" alt="image">
 										</div>
 										<a href="#" class="main-slider__card-link link-card" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%">
 											<h3 class="link-card__title">Bohauss</h3>
@@ -152,7 +154,7 @@
 
 									<div class="main-slider__slide swiper-slide">
 										<div class="main-slider__image-ibg">
-											<picture><source srcset="img/home/4.webp" type="image/webp"><img src="img/home/4.jpg" alt="image"></picture>
+											<img src="img/home/4.jpg" alt="image">
 										</div>
 										<a href="#" class="main-slider__card-link link-card" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%">
 											<h3 class="link-card__title">Bohauss</h3>
@@ -171,12 +173,16 @@
 				<div class="product__container">
 					<h2 class="product__title">Our Products</h2>
 					<div class="product__block">
-						<div class="product__card card">
+
+						<article id="1" class="product__card card num1">
 							<div class="card__imageBx">
 								<div class="card__image-ibg">
-									<picture><source data-srcset="img/product/2.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/product/2.jpg" alt="product"></picture>
+									<img data-src="img/product/2.jpg" alt="product">
 								</div>
-								<span class="card__label">-30%</span>
+								<div class="card__labels">
+									<span class="card__label">-30%</span>
+									<span class="card__label card__label_red">New</span>
+								</div>
 							</div>
 							<a href="#" class="card__link">
 								<div class="card__contentBx">
@@ -195,20 +201,23 @@
 									<button class="card__like _icon-heart">Like</button>
 								</div>
 							</div>
-						</div>
-						<div class="product__card card">
+						</article>
+
+						<article class="product__card card">
 							<div class="card__imageBx">
 								<div class="card__image-ibg">
-									<picture><source data-srcset="img/product/10.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/product/10.jpg" alt="product"></picture>
+									<img data-src="img/product/10.jpg" alt="product">
 								</div>
-								<!-- <span class="card__label">-30%</span> -->
+								<div class="card__labels">
+									<span class="card__label card__label_red">New</span>
+								</div>
 							</div>
 							<a href="#" class="card__link">
 								<div class="card__contentBx">
 									<h4 class="card__title">Lolito</h4>
 									<p class="card__text">Stylish cafe chair</p>
 									<p class="card__price">$100
-										<span class="card__price-un">$150</span>
+										<span class="card__price-un"></span>
 									</p>
 								</div>
 							</a>
@@ -220,13 +229,15 @@
 									<button class="card__like _icon-heart">Like</button>
 								</div>
 							</div>
-						</div>
-						<div class="product__card card">
+						</article>
+
+						<article class="product__card card">
 							<div class="card__imageBx">
 								<div class="card__image-ibg">
-									<picture><source data-srcset="img/product/8.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/product/8.jpg" alt="product"></picture>
+									<img data-src="img/product/8.jpg" alt="product">
 								</div>
-								<!-- <span class="card__label">-30%</span> -->
+								<div class="card__labels">
+								</div>
 							</div>
 							<a href="#" class="card__link">
 								<div class="card__contentBx">
@@ -245,19 +256,22 @@
 									<button class="card__like _icon-heart">Like</button>
 								</div>
 							</div>
-						</div>
-						<div class="product__card card">
+						</article>
+
+						<article class="product__card card">
 							<div class="card__imageBx">
 								<div class="card__image-ibg">
-									<picture><source data-srcset="img/product/12.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/product/12.jpg" alt="product"></picture>
+									<img data-src="img/product/12.jpg" alt="product">
 								</div>
-								<span class="card__label">-30%</span>
+								<div class="card__labels">
+									<span class="card__label">-10%</span>
+								</div>
 							</div>
 							<a href="#" class="card__link">
 								<div class="card__contentBx">
 									<h4 class="card__title">Pingky</h4>
 									<p class="card__text">Cute bed set</p>
-									<p class="card__price">$1000
+									<p class="card__price">$1350
 										<span class="card__price-un">$1500</span>
 									</p>
 								</div>
@@ -270,11 +284,19 @@
 									<button class="card__like _icon-heart">Like</button>
 								</div>
 							</div>
-						</div>
+						</article>
 					</div>
 					<div class="product__buttons">
 						<button type="button" class="product__button button">Show More</button>
 					</div>
+				</div>
+			</section>
+			<!-- *Room -->
+			<section class="room">
+				<div class="room__container">
+					<div class="room__text-content"></div>
+					<div class="room__slider"></div>
+					<div class="room__slider-nav"></div>
 				</div>
 			</section>
 		</main>
@@ -392,7 +414,7 @@
 		</div>
 	</div>
 </div> -->
-	<script src="js/app.min.js?_v=20221012211623"></script>
+	<script src="js/app.min.js"></script>
 </body>
 
 </html>
