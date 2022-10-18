@@ -4249,6 +4249,29 @@
                 },
                 on: {}
             });
+            if (document.querySelector(".room-slider__swiper")) new core(".room-slider__swiper", {
+                modules: [ Navigation, Pagination, Parallax ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 24,
+                autoHeight: true,
+                speed: 800,
+                parallax: true,
+                loop: true,
+                loopedSlides: 2,
+                preloadImages: false,
+                lazy: true,
+                pagination: {
+                    el: ".room-slider__pagination",
+                    clickable: true
+                },
+                navigation: {
+                    prevEl: ".room-slider__button-prev.swiper-button-prev",
+                    nextEl: ".room-slider__button-next.swiper-button-next"
+                },
+                on: {}
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();
