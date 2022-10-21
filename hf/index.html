@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221021125702">
+	<link rel="stylesheet" href="css/style.min.css?_v=20221021132834">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +19,11 @@
 				<button type="button" class="menu__icon icon-menu"><span></span></button>
 				<div class="header__inner">
 					<div class="header__l-block">
-						<a href="#" class="header__logo-full" go-to="home">
+						<a href="#" class="header__logo-full" data-goto=".home">
 							<!-- <img src="img/logo.svg" alt="logo"> -->
 							HF
 						</a>
-						<a href="#" class="header__logo-min" go-to="home">
+						<a href="#" class="header__logo-min" data-goto=".home">
 							<!-- <img src="img/logo.svg" alt="logo"> -->
 							Home-Furniture
 						</a>
@@ -33,7 +33,7 @@
 							<nav class="menu__body">
 								<ul class="menu__list" data-spollers="768,max" data-spollers-speed="800">
 									<li class="menu__item">
-										<a href="#" class="menu__link">Products</a>
+										<a href="#" class="menu__link" data-goto=".product">Products</a>
 										<button type="button" class="menu__arrow _icon-down-arrow" data-spoller data-spoller-close></button>
 										<ul class="menu__sub-list">
 											<li class="menu__sub-item">
@@ -51,7 +51,7 @@
 										</ul>
 									</li>
 									<li class="menu__item">
-										<a href="#" class="menu__link">Rooms</a>
+										<a href="#" class="menu__link" data-goto=".room">Rooms</a>
 										<button class="menu__arrow _icon-down-arrow" type="button" data-spoller data-spoller-close></button>
 										<ul class="menu__sub-list">
 											<li class="menu__sub-item"><a href="#" class="menu__sub-link">Bedroom</a></li>
@@ -60,7 +60,10 @@
 											<li class="menu__sub-item"><a href="#" class="menu__sub-link">Bathroom</a></li>
 										</ul>
 									</li>
-									<li class="menu__item"><a href="#" class="menu__link">Inspirations</a></li>
+									<li class="menu__item"><a href="#" class="menu__link" data-goto=".gallery">Gallery</a>
+									</li>
+									<li class="menu__item"><a href="#" class="menu__link" data-goto=".footer">Contact</a>
+									</li>
 								</ul>
 							</nav>
 						</div>
@@ -636,7 +639,7 @@
 		</div>
 	</div>
 </div> -->
-	<script src="js/app.min.js?_v=20221021125702"></script>
+	<script src="js/app.min.js?_v=20221021132834"></script>
 </body>
 
 </html>
