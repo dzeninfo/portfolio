@@ -226,6 +226,13 @@ h4 {
   min-width: 0;
 }
 
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+
 [class*=__container] {
   max-width: 90rem;
   -webkit-box-sizing: content-box;
@@ -380,7 +387,6 @@ textarea {
 
 .select__value:after {
   content: "";
-  background-image: url("../img/icons/arrow-down.svg");
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
       align-self: stretch;
@@ -4255,8 +4261,6 @@ body::after {
 
 @media (any-hover: hover) {
   .button:hover {
-    -webkit-box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.3);
     -webkit-transition: all 0.1s ease 0s;
     -o-transition: all 0.1s ease 0s;
     transition: all 0.1s ease 0s;
