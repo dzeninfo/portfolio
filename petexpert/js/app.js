@@ -6406,10 +6406,7 @@
                 function trackScroll() {
                     const scrolled = window.pageYOffset;
                     const coords = document.documentElement.clientHeight;
-                    if (scrolled > coords) {
-                        btnTop.classList.add("show-top");
-                        console.log("scrolled");
-                    }
+                    if (scrolled > coords) btnTop.classList.add("show-top");
                     if (scrolled < coords) btnTop.classList.remove("show-top");
                 }
                 function backToTop() {
@@ -6420,7 +6417,7 @@
                 }
             })();
         };
-        window["FLS"] = true;
+        window["FLS"] = false;
         isWebp();
         menuInit();
         spollers();
