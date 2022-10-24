@@ -1,567 +1,58 @@
 (() => {
     var __webpack_modules__ = {
-        97: function(module) {
+        801: function(module) {
             /**
  * lightgallery | 2.6.1 | September 14th 2022
  * http://www.lightgalleryjs.com/
  * Copyright (c) 2020 Sachin Neravath;
  * @license GPLv3
  */
-            !function(t, e) {
-                true ? module.exports = e() : 0;
-            }(0, (function() {
-                "use strict";
-                var t = function() {
-                    return (t = Object.assign || function(t) {
-                        for (var e, i = 1, s = arguments.length; i < s; i++) for (var h in e = arguments[i]) Object.prototype.hasOwnProperty.call(e, h) && (t[h] = e[h]);
-                        return t;
-                    }).apply(this, arguments);
-                }, e = {
-                    thumbnail: !0,
-                    animateThumb: !0,
-                    currentPagerPosition: "middle",
-                    alignThumbnails: "middle",
-                    thumbWidth: 100,
-                    thumbHeight: "80px",
-                    thumbMargin: 5,
-                    appendThumbnailsTo: ".lg-components",
-                    toggleThumb: !1,
-                    enableThumbDrag: !0,
-                    enableThumbSwipe: !0,
-                    thumbnailSwipeThreshold: 10,
-                    loadYouTubeThumbnail: !0,
-                    youTubeThumbSize: 1,
-                    thumbnailPluginStrings: {
-                        toggleThumbnails: "Toggle thumbnails"
-                    }
-                }, i = "lgContainerResize", s = "lgUpdateSlides", h = "lgBeforeOpen", n = "lgBeforeSlide";
-                return function() {
-                    function o(t, e) {
-                        return this.thumbOuterWidth = 0, this.thumbTotalWidth = 0, this.translateX = 0, 
-                        this.thumbClickable = !1, this.core = t, this.$LG = e, this;
-                    }
-                    return o.prototype.init = function() {
-                        this.settings = t(t({}, e), this.core.settings), this.thumbOuterWidth = 0, this.thumbTotalWidth = this.core.galleryItems.length * (this.settings.thumbWidth + this.settings.thumbMargin), 
-                        this.translateX = 0, this.setAnimateThumbStyles(), this.core.settings.allowMediaOverlap || (this.settings.toggleThumb = !1), 
-                        this.settings.thumbnail && (this.build(), this.settings.animateThumb ? (this.settings.enableThumbDrag && this.enableThumbDrag(), 
-                        this.settings.enableThumbSwipe && this.enableThumbSwipe(), this.thumbClickable = !1) : this.thumbClickable = !0, 
-                        this.toggleThumbBar(), this.thumbKeyPress());
-                    }, o.prototype.build = function() {
-                        var t = this;
-                        this.setThumbMarkup(), this.manageActiveClassOnSlideChange(), this.$lgThumb.first().on("click.lg touchend.lg", (function(e) {
-                            var i = t.$LG(e.target);
-                            i.hasAttribute("data-lg-item-id") && setTimeout((function() {
-                                if (t.thumbClickable && !t.core.lgBusy) {
-                                    var e = parseInt(i.attr("data-lg-item-id"));
-                                    t.core.slide(e, !1, !0, !1);
-                                }
-                            }), 50);
-                        })), this.core.LGel.on(n + ".thumb", (function(e) {
-                            var i = e.detail.index;
-                            t.animateThumb(i);
-                        })), this.core.LGel.on(h + ".thumb", (function() {
-                            t.thumbOuterWidth = t.core.outer.get().offsetWidth;
-                        })), this.core.LGel.on(s + ".thumb", (function() {
-                            t.rebuildThumbnails();
-                        })), this.core.LGel.on(i + ".thumb", (function() {
-                            t.core.lgOpened && setTimeout((function() {
-                                t.thumbOuterWidth = t.core.outer.get().offsetWidth, t.animateThumb(t.core.index), 
-                                t.thumbOuterWidth = t.core.outer.get().offsetWidth;
-                            }), 50);
-                        }));
-                    }, o.prototype.setThumbMarkup = function() {
-                        var t = "lg-thumb-outer ";
-                        this.settings.alignThumbnails && (t += "lg-thumb-align-" + this.settings.alignThumbnails);
-                        var e = '<div class="' + t + '">\n        <div class="lg-thumb lg-group">\n        </div>\n        </div>';
-                        this.core.outer.addClass("lg-has-thumb"), ".lg-components" === this.settings.appendThumbnailsTo ? this.core.$lgComponents.append(e) : this.core.outer.append(e), 
-                        this.$thumbOuter = this.core.outer.find(".lg-thumb-outer").first(), this.$lgThumb = this.core.outer.find(".lg-thumb").first(), 
-                        this.settings.animateThumb && this.core.outer.find(".lg-thumb").css("transition-duration", this.core.settings.speed + "ms").css("width", this.thumbTotalWidth + "px").css("position", "relative"), 
-                        this.setThumbItemHtml(this.core.galleryItems);
-                    }, o.prototype.enableThumbDrag = function() {
-                        var t = this, e = {
-                            cords: {
-                                startX: 0,
-                                endX: 0
-                            },
-                            isMoved: !1,
-                            newTranslateX: 0,
-                            startTime: new Date,
-                            endTime: new Date,
-                            touchMoveTime: 0
-                        }, i = !1;
-                        this.$thumbOuter.addClass("lg-grab"), this.core.outer.find(".lg-thumb").first().on("mousedown.lg.thumb", (function(s) {
-                            t.thumbTotalWidth > t.thumbOuterWidth && (s.preventDefault(), e.cords.startX = s.pageX, 
-                            e.startTime = new Date, t.thumbClickable = !1, i = !0, t.core.outer.get().scrollLeft += 1, 
-                            t.core.outer.get().scrollLeft -= 1, t.$thumbOuter.removeClass("lg-grab").addClass("lg-grabbing"));
-                        })), this.$LG(window).on("mousemove.lg.thumb.global" + this.core.lgId, (function(s) {
-                            t.core.lgOpened && i && (e.cords.endX = s.pageX, e = t.onThumbTouchMove(e));
-                        })), this.$LG(window).on("mouseup.lg.thumb.global" + this.core.lgId, (function() {
-                            t.core.lgOpened && (e.isMoved ? e = t.onThumbTouchEnd(e) : t.thumbClickable = !0, 
-                            i && (i = !1, t.$thumbOuter.removeClass("lg-grabbing").addClass("lg-grab")));
-                        }));
-                    }, o.prototype.enableThumbSwipe = function() {
-                        var t = this, e = {
-                            cords: {
-                                startX: 0,
-                                endX: 0
-                            },
-                            isMoved: !1,
-                            newTranslateX: 0,
-                            startTime: new Date,
-                            endTime: new Date,
-                            touchMoveTime: 0
-                        };
-                        this.$lgThumb.on("touchstart.lg", (function(i) {
-                            t.thumbTotalWidth > t.thumbOuterWidth && (i.preventDefault(), e.cords.startX = i.targetTouches[0].pageX, 
-                            t.thumbClickable = !1, e.startTime = new Date);
-                        })), this.$lgThumb.on("touchmove.lg", (function(i) {
-                            t.thumbTotalWidth > t.thumbOuterWidth && (i.preventDefault(), e.cords.endX = i.targetTouches[0].pageX, 
-                            e = t.onThumbTouchMove(e));
-                        })), this.$lgThumb.on("touchend.lg", (function() {
-                            e.isMoved ? e = t.onThumbTouchEnd(e) : t.thumbClickable = !0;
-                        }));
-                    }, o.prototype.rebuildThumbnails = function() {
-                        var t = this;
-                        this.$thumbOuter.addClass("lg-rebuilding-thumbnails"), setTimeout((function() {
-                            t.thumbTotalWidth = t.core.galleryItems.length * (t.settings.thumbWidth + t.settings.thumbMargin), 
-                            t.$lgThumb.css("width", t.thumbTotalWidth + "px"), t.$lgThumb.empty(), t.setThumbItemHtml(t.core.galleryItems), 
-                            t.animateThumb(t.core.index);
-                        }), 50), setTimeout((function() {
-                            t.$thumbOuter.removeClass("lg-rebuilding-thumbnails");
-                        }), 200);
-                    }, o.prototype.setTranslate = function(t) {
-                        this.$lgThumb.css("transform", "translate3d(-" + t + "px, 0px, 0px)");
-                    }, o.prototype.getPossibleTransformX = function(t) {
-                        return t > this.thumbTotalWidth - this.thumbOuterWidth && (t = this.thumbTotalWidth - this.thumbOuterWidth), 
-                        t < 0 && (t = 0), t;
-                    }, o.prototype.animateThumb = function(t) {
-                        if (this.$lgThumb.css("transition-duration", this.core.settings.speed + "ms"), this.settings.animateThumb) {
-                            var e = 0;
-                            switch (this.settings.currentPagerPosition) {
-                              case "left":
-                                e = 0;
-                                break;
-
-                              case "middle":
-                                e = this.thumbOuterWidth / 2 - this.settings.thumbWidth / 2;
-                                break;
-
-                              case "right":
-                                e = this.thumbOuterWidth - this.settings.thumbWidth;
-                            }
-                            this.translateX = (this.settings.thumbWidth + this.settings.thumbMargin) * t - 1 - e, 
-                            this.translateX > this.thumbTotalWidth - this.thumbOuterWidth && (this.translateX = this.thumbTotalWidth - this.thumbOuterWidth), 
-                            this.translateX < 0 && (this.translateX = 0), this.setTranslate(this.translateX);
-                        }
-                    }, o.prototype.onThumbTouchMove = function(t) {
-                        return t.newTranslateX = this.translateX, t.isMoved = !0, t.touchMoveTime = (new Date).valueOf(), 
-                        t.newTranslateX -= t.cords.endX - t.cords.startX, t.newTranslateX = this.getPossibleTransformX(t.newTranslateX), 
-                        this.setTranslate(t.newTranslateX), this.$thumbOuter.addClass("lg-dragging"), t;
-                    }, o.prototype.onThumbTouchEnd = function(t) {
-                        t.isMoved = !1, t.endTime = new Date, this.$thumbOuter.removeClass("lg-dragging");
-                        var e = t.endTime.valueOf() - t.startTime.valueOf(), i = t.cords.endX - t.cords.startX, s = Math.abs(i) / e;
-                        return s > .15 && t.endTime.valueOf() - t.touchMoveTime < 30 ? ((s += 1) > 2 && (s += 1), 
-                        s += s * (Math.abs(i) / this.thumbOuterWidth), this.$lgThumb.css("transition-duration", Math.min(s - 1, 2) + "settings"), 
-                        i *= s, this.translateX = this.getPossibleTransformX(this.translateX - i), this.setTranslate(this.translateX)) : this.translateX = t.newTranslateX, 
-                        Math.abs(t.cords.endX - t.cords.startX) < this.settings.thumbnailSwipeThreshold && (this.thumbClickable = !0), 
-                        t;
-                    }, o.prototype.getThumbHtml = function(t, e) {
-                        var i, s = this.core.galleryItems[e].__slideVideoInfo || {};
-                        return i = s.youtube && this.settings.loadYouTubeThumbnail ? "//img.youtube.com/vi/" + s.youtube[1] + "/" + this.settings.youTubeThumbSize + ".jpg" : t, 
-                        '<div data-lg-item-id="' + e + '" class="lg-thumb-item ' + (e === this.core.index ? " active" : "") + '" \n        style="width:' + this.settings.thumbWidth + "px; height: " + this.settings.thumbHeight + ";\n            margin-right: " + this.settings.thumbMargin + 'px;">\n            <img data-lg-item-id="' + e + '" src="' + i + '" />\n        </div>';
-                    }, o.prototype.getThumbItemHtml = function(t) {
-                        for (var e = "", i = 0; i < t.length; i++) e += this.getThumbHtml(t[i].thumb, i);
-                        return e;
-                    }, o.prototype.setThumbItemHtml = function(t) {
-                        var e = this.getThumbItemHtml(t);
-                        this.$lgThumb.html(e);
-                    }, o.prototype.setAnimateThumbStyles = function() {
-                        this.settings.animateThumb && this.core.outer.addClass("lg-animate-thumb");
-                    }, o.prototype.manageActiveClassOnSlideChange = function() {
-                        var t = this;
-                        this.core.LGel.on(n + ".thumb", (function(e) {
-                            var i = t.core.outer.find(".lg-thumb-item"), s = e.detail.index;
-                            i.removeClass("active"), i.eq(s).addClass("active");
-                        }));
-                    }, o.prototype.toggleThumbBar = function() {
-                        var t = this;
-                        this.settings.toggleThumb && (this.core.outer.addClass("lg-can-toggle"), this.core.$toolbar.append('<button type="button" aria-label="' + this.settings.thumbnailPluginStrings.toggleThumbnails + '" class="lg-toggle-thumb lg-icon"></button>'), 
-                        this.core.outer.find(".lg-toggle-thumb").first().on("click.lg", (function() {
-                            t.core.outer.toggleClass("lg-components-open");
-                        })));
-                    }, o.prototype.thumbKeyPress = function() {
-                        var t = this;
-                        this.$LG(window).on("keydown.lg.thumb.global" + this.core.lgId, (function(e) {
-                            t.core.lgOpened && t.settings.toggleThumb && (38 === e.keyCode ? (e.preventDefault(), 
-                            t.core.outer.addClass("lg-components-open")) : 40 === e.keyCode && (e.preventDefault(), 
-                            t.core.outer.removeClass("lg-components-open")));
-                        }));
-                    }, o.prototype.destroy = function() {
-                        this.settings.thumbnail && (this.$LG(window).off(".lg.thumb.global" + this.core.lgId), 
-                        this.core.LGel.off(".lg.thumb"), this.core.LGel.off(".thumb"), this.$thumbOuter.remove(), 
-                        this.core.outer.removeClass("lg-has-thumb"));
-                    }, o;
-                }();
-            }));
-        },
-        86: function(module) {
-            /**
- * lightgallery | 2.6.1 | September 14th 2022
- * http://www.lightgalleryjs.com/
- * Copyright (c) 2020 Sachin Neravath;
- * @license GPLv3
- */
-            !function(e, t) {
-                true ? module.exports = t() : 0;
+            !function(e, l) {
+                true ? module.exports = l() : 0;
             }(0, (function() {
                 "use strict";
                 var e = function() {
                     return (e = Object.assign || function(e) {
-                        for (var t, o = 1, i = arguments.length; o < i; o++) for (var s in t = arguments[o]) Object.prototype.hasOwnProperty.call(t, s) && (e[s] = t[s]);
+                        for (var l, n = 1, t = arguments.length; n < t; n++) for (var c in l = arguments[n]) Object.prototype.hasOwnProperty.call(l, c) && (e[c] = l[c]);
                         return e;
                     }).apply(this, arguments);
-                }, t = {
-                    scale: 1,
-                    zoom: !0,
-                    actualSize: !0,
-                    showZoomInOutIcons: !1,
-                    actualSizeIcons: {
-                        zoomIn: "lg-zoom-in",
-                        zoomOut: "lg-zoom-out"
-                    },
-                    enableZoomAfter: 300,
-                    zoomPluginStrings: {
-                        zoomIn: "Zoom in",
-                        zoomOut: "Zoom out",
-                        viewActualSize: "View actual size"
+                }, l = {
+                    fullScreen: !0,
+                    fullscreenPluginStrings: {
+                        toggleFullscreen: "Toggle Fullscreen"
                     }
-                }, o = "lgContainerResize", i = "lgBeforeOpen", s = "lgAfterOpen", a = "lgSlideItemLoad", n = "lgAfterSlide", r = "lgRotateLeft", l = "lgRotateRight", c = "lgFlipHorizontal", g = "lgFlipVertical";
+                };
                 return function() {
-                    function h(o, i) {
-                        return this.core = o, this.$LG = i, this.settings = e(e({}, t), this.core.settings), 
+                    function n(n, t) {
+                        return this.core = n, this.$LG = t, this.settings = e(e({}, l), this.core.settings), 
                         this;
                     }
-                    return h.prototype.buildTemplates = function() {
-                        var e = this.settings.showZoomInOutIcons ? '<button id="' + this.core.getIdName("lg-zoom-in") + '" type="button" aria-label="' + this.settings.zoomPluginStrings.zoomIn + '" class="lg-zoom-in lg-icon"></button><button id="' + this.core.getIdName("lg-zoom-out") + '" type="button" aria-label="' + this.settings.zoomPluginStrings.zoomIn + '" class="lg-zoom-out lg-icon"></button>' : "";
-                        this.settings.actualSize && (e += '<button id="' + this.core.getIdName("lg-actual-size") + '" type="button" aria-label="' + this.settings.zoomPluginStrings.viewActualSize + '" class="' + this.settings.actualSizeIcons.zoomIn + ' lg-icon"></button>'), 
-                        this.core.outer.addClass("lg-use-transition-for-zoom"), this.core.$toolbar.first().append(e);
-                    }, h.prototype.enableZoom = function(e) {
-                        var t = this, o = this.settings.enableZoomAfter + e.detail.delay;
-                        this.$LG("body").first().hasClass("lg-from-hash") && e.detail.delay ? o = 0 : this.$LG("body").first().removeClass("lg-from-hash"), 
-                        this.zoomableTimeout = setTimeout((function() {
-                            t.isImageSlide(t.core.index) && (t.core.getSlideItem(e.detail.index).addClass("lg-zoomable"), 
-                            e.detail.index === t.core.index && t.setZoomEssentials());
-                        }), o + 30);
-                    }, h.prototype.enableZoomOnSlideItemLoad = function() {
-                        this.core.LGel.on(a + ".zoom", this.enableZoom.bind(this));
-                    }, h.prototype.getDragCords = function(e) {
-                        return {
-                            x: e.pageX,
-                            y: e.pageY
-                        };
-                    }, h.prototype.getSwipeCords = function(e) {
-                        return {
-                            x: e.touches[0].pageX,
-                            y: e.touches[0].pageY
-                        };
-                    }, h.prototype.getDragAllowedAxises = function(e, t) {
-                        var o = this.core.getSlideItem(this.core.index).find(".lg-image").first().get(), i = 0, s = 0, a = o.getBoundingClientRect();
-                        e ? (i = o.offsetHeight * e, s = o.offsetWidth * e) : t ? (i = a.height + t * a.height, 
-                        s = a.width + t * a.width) : (i = a.height, s = a.width);
-                        var n = i > this.containerRect.height;
-                        return {
-                            allowX: s > this.containerRect.width,
-                            allowY: n
-                        };
-                    }, h.prototype.setZoomEssentials = function() {
-                        this.containerRect = this.core.$content.get().getBoundingClientRect();
-                    }, h.prototype.zoomImage = function(e, t, o, i) {
-                        if (!(Math.abs(t) <= 0)) {
-                            var s, a, n = this.containerRect.width / 2 + this.containerRect.left, r = this.containerRect.height / 2 + this.containerRect.top + this.scrollTop;
-                            1 === e && (this.positionChanged = !1);
-                            var l = this.getDragAllowedAxises(0, t), c = l.allowY, g = l.allowX;
-                            this.positionChanged && (s = this.left / (this.scale - t), a = this.top / (this.scale - t), 
-                            this.pageX = n - s, this.pageY = r - a, this.positionChanged = !1);
-                            var h, m, u = this.getPossibleSwipeDragCords(t), d = n - this.pageX, f = r - this.pageY;
-                            if (e - t > 1) {
-                                var p = (e - t) / Math.abs(t);
-                                h = (d = (t < 0 ? -d : d) + this.left * (p + (t < 0 ? -1 : 1))) / p, m = (f = (t < 0 ? -f : f) + this.top * (p + (t < 0 ? -1 : 1))) / p;
-                            } else h = d * (p = (e - t) * t), m = f * p;
-                            if (o && (g ? this.isBeyondPossibleLeft(h, u.minX) ? h = u.minX : this.isBeyondPossibleRight(h, u.maxX) && (h = u.maxX) : e > 1 && (h < u.minX ? h = u.minX : h > u.maxX && (h = u.maxX)), 
-                            c ? this.isBeyondPossibleTop(m, u.minY) ? m = u.minY : this.isBeyondPossibleBottom(m, u.maxY) && (m = u.maxY) : e > 1 && (m < u.minY ? m = u.minY : m > u.maxY && (m = u.maxY))), 
-                            this.setZoomStyles({
-                                x: h,
-                                y: m,
-                                scale: e
-                            }), this.left = h, this.top = m, i) e >= this.getCurrentImageActualSizeScale() && this.setZoomImageSize();
+                    return n.prototype.init = function() {
+                        var e = "";
+                        if (this.settings.fullScreen) {
+                            if (!(document.fullscreenEnabled || document.webkitFullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled)) return;
+                            e = '<button type="button" aria-label="' + this.settings.fullscreenPluginStrings.toggleFullscreen + '" class="lg-fullscreen lg-icon"></button>', 
+                            this.core.$toolbar.append(e), this.fullScreen();
                         }
-                    }, h.prototype.resetImageTranslate = function(e) {
-                        if (this.isImageSlide(e)) {
-                            var t = this.core.getSlideItem(e).find(".lg-image").first();
-                            this.imageReset = !1, t.removeClass("reset-transition reset-transition-y reset-transition-x"), 
-                            this.core.outer.removeClass("lg-actual-size"), t.css("width", "auto").css("height", "auto"), 
-                            setTimeout((function() {
-                                t.removeClass("no-transition");
-                            }), 10);
-                        }
-                    }, h.prototype.setZoomImageSize = function() {
-                        var e = this, t = this.core.getSlideItem(this.core.index).find(".lg-image").first();
-                        setTimeout((function() {
-                            t.addClass("no-transition"), e.imageReset = !0;
-                        }), 500), setTimeout((function() {
-                            var o = e.getDragAllowedAxises(e.scale);
-                            t.css("width", t.get().naturalWidth + "px").css("height", t.get().naturalHeight + "px"), 
-                            e.core.outer.addClass("lg-actual-size"), o.allowX && o.allowY ? t.addClass("reset-transition") : o.allowX && !o.allowY ? t.addClass("reset-transition-x") : !o.allowX && o.allowY && t.addClass("reset-transition-y");
-                        }), 550);
-                    }, h.prototype.setZoomStyles = function(e) {
-                        var t = this.core.getSlideItem(this.core.index).find(".lg-img-wrap").first(), o = this.core.getSlideItem(this.core.index).find(".lg-image").first(), i = this.core.outer.find(".lg-current .lg-dummy-img").first();
-                        this.scale = e.scale, o.css("transform", "scale3d(" + e.scale + ", " + e.scale + ", 1)"), 
-                        i.css("transform", "scale3d(" + e.scale + ", " + e.scale + ", 1)");
-                        var s = "translate3d(" + e.x + "px, " + e.y + "px, 0)";
-                        t.css("transform", s);
-                    }, h.prototype.setActualSize = function(e, t) {
-                        var o = this, i = this.core.galleryItems[this.core.index];
-                        this.resetImageTranslate(e), setTimeout((function() {
-                            if (i.src && !o.core.outer.hasClass("lg-first-slide-loading")) {
-                                var e = o.getCurrentImageActualSizeScale(), s = o.scale;
-                                o.core.outer.hasClass("lg-zoomed") ? o.scale = 1 : o.scale = o.getScale(e), o.setPageCords(t), 
-                                o.beginZoom(o.scale), o.zoomImage(o.scale, o.scale - s, !0, !0), setTimeout((function() {
-                                    o.core.outer.removeClass("lg-grabbing").addClass("lg-grab");
-                                }), 10);
-                            }
-                        }), 50);
-                    }, h.prototype.getNaturalWidth = function(e) {
-                        var t = this.core.getSlideItem(e).find(".lg-image").first(), o = this.core.galleryItems[e].width;
-                        return o ? parseFloat(o) : t.get().naturalWidth;
-                    }, h.prototype.getActualSizeScale = function(e, t) {
-                        return e >= t ? e / t || 2 : 1;
-                    }, h.prototype.getCurrentImageActualSizeScale = function() {
-                        var e = this.core.getSlideItem(this.core.index).find(".lg-image").first().get().offsetWidth, t = this.getNaturalWidth(this.core.index) || e;
-                        return this.getActualSizeScale(t, e);
-                    }, h.prototype.getPageCords = function(e) {
-                        var t = {};
-                        if (e) t.x = e.pageX || e.touches[0].pageX, t.y = e.pageY || e.touches[0].pageY; else {
-                            var o = this.core.$content.get().getBoundingClientRect();
-                            t.x = o.width / 2 + o.left, t.y = o.height / 2 + this.scrollTop + o.top;
-                        }
-                        return t;
-                    }, h.prototype.setPageCords = function(e) {
-                        var t = this.getPageCords(e);
-                        this.pageX = t.x, this.pageY = t.y;
-                    }, h.prototype.manageActualPixelClassNames = function() {
-                        this.core.getElementById("lg-actual-size").removeClass(this.settings.actualSizeIcons.zoomIn).addClass(this.settings.actualSizeIcons.zoomOut);
-                    }, h.prototype.beginZoom = function(e) {
-                        return this.core.outer.removeClass("lg-zoom-drag-transition lg-zoom-dragging"), 
-                        e > 1 ? (this.core.outer.addClass("lg-zoomed"), this.manageActualPixelClassNames()) : this.resetZoom(), 
-                        e > 1;
-                    }, h.prototype.getScale = function(e) {
-                        var t = this.getCurrentImageActualSizeScale();
-                        return e < 1 ? e = 1 : e > t && (e = t), e;
-                    }, h.prototype.init = function() {
+                    }, n.prototype.isFullScreen = function() {
+                        return document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+                    }, n.prototype.requestFullscreen = function() {
+                        var e = document.documentElement;
+                        e.requestFullscreen ? e.requestFullscreen() : e.msRequestFullscreen ? e.msRequestFullscreen() : e.mozRequestFullScreen ? e.mozRequestFullScreen() : e.webkitRequestFullscreen && e.webkitRequestFullscreen();
+                    }, n.prototype.exitFullscreen = function() {
+                        document.exitFullscreen ? document.exitFullscreen() : document.msExitFullscreen ? document.msExitFullscreen() : document.mozCancelFullScreen ? document.mozCancelFullScreen() : document.webkitExitFullscreen && document.webkitExitFullscreen();
+                    }, n.prototype.fullScreen = function() {
                         var e = this;
-                        if (this.settings.zoom) {
-                            this.buildTemplates(), this.enableZoomOnSlideItemLoad();
-                            var t = null;
-                            this.core.outer.on("dblclick.lg", (function(t) {
-                                e.$LG(t.target).hasClass("lg-image") && e.setActualSize(e.core.index, t);
-                            })), this.core.outer.on("touchstart.lg", (function(o) {
-                                var i = e.$LG(o.target);
-                                1 === o.touches.length && i.hasClass("lg-image") && (t ? (clearTimeout(t), t = null, 
-                                o.preventDefault(), e.setActualSize(e.core.index, o)) : t = setTimeout((function() {
-                                    t = null;
-                                }), 300));
-                            })), this.core.LGel.on(o + ".zoom " + l + ".zoom " + r + ".zoom " + c + ".zoom " + g + ".zoom", (function() {
-                                if (e.core.lgOpened && e.isImageSlide(e.core.index) && !e.core.touchAction) {
-                                    var t = e.core.getSlideItem(e.core.index).find(".lg-img-wrap").first();
-                                    e.top = 0, e.left = 0, e.setZoomEssentials(), e.setZoomSwipeStyles(t, {
-                                        x: 0,
-                                        y: 0
-                                    }), e.positionChanged = !0;
-                                }
-                            })), this.$LG(window).on("scroll.lg.zoom.global" + this.core.lgId, (function() {
-                                e.core.lgOpened && (e.scrollTop = e.$LG(window).scrollTop());
-                            })), this.core.getElementById("lg-zoom-out").on("click.lg", (function() {
-                                if (e.isImageSlide(e.core.index)) {
-                                    var t = 0;
-                                    e.imageReset && (e.resetImageTranslate(e.core.index), t = 50), setTimeout((function() {
-                                        var t = e.scale - e.settings.scale;
-                                        t < 1 && (t = 1), e.beginZoom(t), e.zoomImage(t, -e.settings.scale, !0, !0);
-                                    }), t);
-                                }
-                            })), this.core.getElementById("lg-zoom-in").on("click.lg", (function() {
-                                e.zoomIn();
-                            })), this.core.getElementById("lg-actual-size").on("click.lg", (function() {
-                                e.setActualSize(e.core.index);
-                            })), this.core.LGel.on(i + ".zoom", (function() {
-                                e.core.outer.find(".lg-item").removeClass("lg-zoomable");
-                            })), this.core.LGel.on(s + ".zoom", (function() {
-                                e.scrollTop = e.$LG(window).scrollTop(), e.pageX = e.core.outer.width() / 2, e.pageY = e.core.outer.height() / 2 + e.scrollTop, 
-                                e.scale = 1;
-                            })), this.core.LGel.on(n + ".zoom", (function(t) {
-                                var o = t.detail.prevIndex;
-                                e.scale = 1, e.positionChanged = !1, e.resetZoom(o), e.resetImageTranslate(o), e.isImageSlide(e.core.index) && e.setZoomEssentials();
-                            })), this.zoomDrag(), this.pinchZoom(), this.zoomSwipe(), this.zoomableTimeout = !1, 
-                            this.positionChanged = !1;
-                        }
-                    }, h.prototype.zoomIn = function() {
-                        if (this.isImageSlide(this.core.index)) {
-                            var e = this.scale + this.settings.scale;
-                            e = this.getScale(e), this.beginZoom(e), this.zoomImage(e, this.settings.scale, !0, !0);
-                        }
-                    }, h.prototype.resetZoom = function(e) {
-                        this.core.outer.removeClass("lg-zoomed lg-zoom-drag-transition");
-                        var t = this.core.getElementById("lg-actual-size"), o = this.core.getSlideItem(void 0 !== e ? e : this.core.index);
-                        t.removeClass(this.settings.actualSizeIcons.zoomOut).addClass(this.settings.actualSizeIcons.zoomIn), 
-                        o.find(".lg-img-wrap").first().removeAttr("style"), o.find(".lg-image").first().removeAttr("style"), 
-                        this.scale = 1, this.left = 0, this.top = 0, this.setPageCords();
-                    }, h.prototype.getTouchDistance = function(e) {
-                        return Math.sqrt((e.touches[0].pageX - e.touches[1].pageX) * (e.touches[0].pageX - e.touches[1].pageX) + (e.touches[0].pageY - e.touches[1].pageY) * (e.touches[0].pageY - e.touches[1].pageY));
-                    }, h.prototype.pinchZoom = function() {
-                        var e = this, t = 0, o = !1, i = 1, s = 0, a = this.core.getSlideItem(this.core.index);
-                        this.core.outer.on("touchstart.lg", (function(o) {
-                            if (a = e.core.getSlideItem(e.core.index), e.isImageSlide(e.core.index) && 2 === o.touches.length) {
-                                if (o.preventDefault(), e.core.outer.hasClass("lg-first-slide-loading")) return;
-                                i = e.scale || 1, e.core.outer.removeClass("lg-zoom-drag-transition lg-zoom-dragging"), 
-                                e.setPageCords(o), e.resetImageTranslate(e.core.index), e.core.touchAction = "pinch", 
-                                t = e.getTouchDistance(o);
-                            }
-                        })), this.core.$inner.on("touchmove.lg", (function(n) {
-                            if (2 === n.touches.length && "pinch" === e.core.touchAction && (e.$LG(n.target).hasClass("lg-item") || a.get().contains(n.target))) {
-                                n.preventDefault();
-                                var r = e.getTouchDistance(n), l = t - r;
-                                if (!o && Math.abs(l) > 5 && (o = !0), o) {
-                                    s = e.scale;
-                                    var c = Math.max(1, i + .02 * -l);
-                                    e.scale = Math.round(100 * (c + Number.EPSILON)) / 100;
-                                    var g = e.scale - s;
-                                    e.zoomImage(e.scale, Math.round(100 * (g + Number.EPSILON)) / 100, !1, !1);
-                                }
-                            }
-                        })), this.core.$inner.on("touchend.lg", (function(i) {
-                            if ("pinch" === e.core.touchAction && (e.$LG(i.target).hasClass("lg-item") || a.get().contains(i.target))) {
-                                if (o = !1, t = 0, e.scale <= 1) e.resetZoom(); else {
-                                    var s = e.getCurrentImageActualSizeScale();
-                                    if (e.scale >= s) {
-                                        var n = s - e.scale;
-                                        0 === n && (n = .01), e.zoomImage(s, n, !1, !0);
-                                    }
-                                    e.manageActualPixelClassNames(), e.core.outer.addClass("lg-zoomed");
-                                }
-                                e.core.touchAction = void 0;
-                            }
+                        this.$LG(document).on("fullscreenchange.lg.global" + this.core.lgId + " \n            webkitfullscreenchange.lg.global" + this.core.lgId + " \n            mozfullscreenchange.lg.global" + this.core.lgId + " \n            MSFullscreenChange.lg.global" + this.core.lgId, (function() {
+                            e.core.lgOpened && e.core.outer.toggleClass("lg-fullscreen-on");
+                        })), this.core.outer.find(".lg-fullscreen").first().on("click.lg", (function() {
+                            e.isFullScreen() ? e.exitFullscreen() : e.requestFullscreen();
                         }));
-                    }, h.prototype.touchendZoom = function(e, t, o, i, s) {
-                        var a = t.x - e.x, n = t.y - e.y, r = Math.abs(a) / s + 1, l = Math.abs(n) / s + 1;
-                        r > 2 && (r += 1), l > 2 && (l += 1), a *= r, n *= l;
-                        var c = this.core.getSlideItem(this.core.index).find(".lg-img-wrap").first(), g = {};
-                        g.x = this.left + a, g.y = this.top + n;
-                        var h = this.getPossibleSwipeDragCords();
-                        (Math.abs(a) > 15 || Math.abs(n) > 15) && (i && (this.isBeyondPossibleTop(g.y, h.minY) ? g.y = h.minY : this.isBeyondPossibleBottom(g.y, h.maxY) && (g.y = h.maxY)), 
-                        o && (this.isBeyondPossibleLeft(g.x, h.minX) ? g.x = h.minX : this.isBeyondPossibleRight(g.x, h.maxX) && (g.x = h.maxX)), 
-                        i ? this.top = g.y : g.y = this.top, o ? this.left = g.x : g.x = this.left, this.setZoomSwipeStyles(c, g), 
-                        this.positionChanged = !0);
-                    }, h.prototype.getZoomSwipeCords = function(e, t, o, i, s) {
-                        var a = {};
-                        if (i) {
-                            if (a.y = this.top + (t.y - e.y), this.isBeyondPossibleTop(a.y, s.minY)) {
-                                var n = s.minY - a.y;
-                                a.y = s.minY - n / 6;
-                            } else if (this.isBeyondPossibleBottom(a.y, s.maxY)) {
-                                var r = a.y - s.maxY;
-                                a.y = s.maxY + r / 6;
-                            }
-                        } else a.y = this.top;
-                        if (o) {
-                            if (a.x = this.left + (t.x - e.x), this.isBeyondPossibleLeft(a.x, s.minX)) {
-                                var l = s.minX - a.x;
-                                a.x = s.minX - l / 6;
-                            } else if (this.isBeyondPossibleRight(a.x, s.maxX)) {
-                                var c = a.x - s.maxX;
-                                a.x = s.maxX + c / 6;
-                            }
-                        } else a.x = this.left;
-                        return a;
-                    }, h.prototype.isBeyondPossibleLeft = function(e, t) {
-                        return e >= t;
-                    }, h.prototype.isBeyondPossibleRight = function(e, t) {
-                        return e <= t;
-                    }, h.prototype.isBeyondPossibleTop = function(e, t) {
-                        return e >= t;
-                    }, h.prototype.isBeyondPossibleBottom = function(e, t) {
-                        return e <= t;
-                    }, h.prototype.isImageSlide = function(e) {
-                        var t = this.core.galleryItems[e];
-                        return "image" === this.core.getSlideType(t);
-                    }, h.prototype.getPossibleSwipeDragCords = function(e) {
-                        var t = this.core.getSlideItem(this.core.index).find(".lg-image").first(), o = this.core.mediaContainerPosition.bottom, i = t.get().getBoundingClientRect(), s = i.height, a = i.width;
-                        return e && (s += e * s, a += e * a), {
-                            minY: (s - this.containerRect.height) / 2,
-                            maxY: (this.containerRect.height - s) / 2 + o,
-                            minX: (a - this.containerRect.width) / 2,
-                            maxX: (this.containerRect.width - a) / 2
-                        };
-                    }, h.prototype.setZoomSwipeStyles = function(e, t) {
-                        e.css("transform", "translate3d(" + t.x + "px, " + t.y + "px, 0)");
-                    }, h.prototype.zoomSwipe = function() {
-                        var e, t, o = this, i = {}, s = {}, a = !1, n = !1, r = !1, l = new Date, c = (new Date, 
-                        this.core.getSlideItem(this.core.index));
-                        this.core.$inner.on("touchstart.lg", (function(s) {
-                            if (o.isImageSlide(o.core.index) && (c = o.core.getSlideItem(o.core.index), (o.$LG(s.target).hasClass("lg-item") || c.get().contains(s.target)) && 1 === s.touches.length && o.core.outer.hasClass("lg-zoomed"))) {
-                                s.preventDefault(), l = new Date, o.core.touchAction = "zoomSwipe", t = o.core.getSlideItem(o.core.index).find(".lg-img-wrap").first();
-                                var a = o.getDragAllowedAxises(0);
-                                r = a.allowY, ((n = a.allowX) || r) && (i = o.getSwipeCords(s)), e = o.getPossibleSwipeDragCords(), 
-                                o.core.outer.addClass("lg-zoom-dragging lg-zoom-drag-transition");
-                            }
-                        })), this.core.$inner.on("touchmove.lg", (function(l) {
-                            if (1 === l.touches.length && "zoomSwipe" === o.core.touchAction && (o.$LG(l.target).hasClass("lg-item") || c.get().contains(l.target))) {
-                                l.preventDefault(), o.core.touchAction = "zoomSwipe", s = o.getSwipeCords(l);
-                                var g = o.getZoomSwipeCords(i, s, n, r, e);
-                                (Math.abs(s.x - i.x) > 15 || Math.abs(s.y - i.y) > 15) && (a = !0, o.setZoomSwipeStyles(t, g));
-                            }
-                        })), this.core.$inner.on("touchend.lg", (function(e) {
-                            if ("zoomSwipe" === o.core.touchAction && (o.$LG(e.target).hasClass("lg-item") || c.get().contains(e.target))) {
-                                if (e.preventDefault(), o.core.touchAction = void 0, o.core.outer.removeClass("lg-zoom-dragging"), 
-                                !a) return;
-                                a = !1;
-                                var t = (new Date).valueOf() - l.valueOf();
-                                o.touchendZoom(i, s, n, r, t);
-                            }
-                        }));
-                    }, h.prototype.zoomDrag = function() {
-                        var e, t, o, i, s = this, a = {}, n = {}, r = !1, l = !1, c = !1, g = !1;
-                        this.core.outer.on("mousedown.lg.zoom", (function(t) {
-                            if (s.isImageSlide(s.core.index)) {
-                                var n = s.core.getSlideItem(s.core.index);
-                                if (s.$LG(t.target).hasClass("lg-item") || n.get().contains(t.target)) {
-                                    e = new Date, i = s.core.getSlideItem(s.core.index).find(".lg-img-wrap").first();
-                                    var l = s.getDragAllowedAxises(0);
-                                    g = l.allowY, c = l.allowX, s.core.outer.hasClass("lg-zoomed") && s.$LG(t.target).hasClass("lg-object") && (c || g) && (t.preventDefault(), 
-                                    a = s.getDragCords(t), o = s.getPossibleSwipeDragCords(), r = !0, s.core.outer.removeClass("lg-grab").addClass("lg-grabbing lg-zoom-drag-transition lg-zoom-dragging"));
-                                }
-                            }
-                        })), this.$LG(window).on("mousemove.lg.zoom.global" + this.core.lgId, (function(e) {
-                            if (r) {
-                                l = !0, n = s.getDragCords(e);
-                                var t = s.getZoomSwipeCords(a, n, c, g, o);
-                                s.setZoomSwipeStyles(i, t);
-                            }
-                        })), this.$LG(window).on("mouseup.lg.zoom.global" + this.core.lgId, (function(o) {
-                            if (r) {
-                                if (t = new Date, r = !1, s.core.outer.removeClass("lg-zoom-dragging"), l && (a.x !== n.x || a.y !== n.y)) {
-                                    n = s.getDragCords(o);
-                                    var i = t.valueOf() - e.valueOf();
-                                    s.touchendZoom(a, n, c, g, i);
-                                }
-                                l = !1;
-                            }
-                            s.core.outer.removeClass("lg-grabbing").addClass("lg-grab");
-                        }));
-                    }, h.prototype.closeGallery = function() {
-                        this.resetZoom();
-                    }, h.prototype.destroy = function() {
-                        this.$LG(window).off(".lg.zoom.global" + this.core.lgId), this.core.LGel.off(".lg.zoom"), 
-                        this.core.LGel.off(".zoom"), clearTimeout(this.zoomableTimeout), this.zoomableTimeout = !1;
-                    }, h;
+                    }, n.prototype.closeGallery = function() {
+                        this.isFullScreen() && this.exitFullscreen();
+                    }, n.prototype.destroy = function() {
+                        this.$LG(document).off("fullscreenchange.lg.global" + this.core.lgId + " \n            webkitfullscreenchange.lg.global" + this.core.lgId + " \n            mozfullscreenchange.lg.global" + this.core.lgId + " \n            MSFullscreenChange.lg.global" + this.core.lgId);
+                    }, n;
                 }();
             }));
         },
@@ -1183,11 +674,6 @@
             bodyUnlock();
             document.documentElement.classList.remove("menu-open");
         }
-        function functions_FLS(message) {
-            setTimeout((() => {
-                if (window.FLS) console.log(message);
-            }), 0);
-        }
         function removeClasses(array, className) {
             for (var i = 0; i < array.length; i++) array[i].classList.remove(className);
         }
@@ -1269,8 +755,7 @@
                         behavior: "smooth"
                     });
                 }
-                functions_FLS(`[gotoBlock]: Юхуу...едем к ${targetBlock}`);
-            } else functions_FLS(`[gotoBlock]: Ой ой..Такого блока нет на странице: ${targetBlock}`);
+            }
         };
         function formFieldsInit(options = {
             viewPass: false,
@@ -7147,8 +6632,7 @@ PERFORMANCE OF THIS SOFTWARE.
             return new LightGallery(el, options);
         }
         const lightgallery_es5 = lightGallery;
-        var lg_thumbnail_min = __webpack_require__(97);
-        var lg_zoom_min = __webpack_require__(86);
+        var lg_fullscreen_min = __webpack_require__(801);
         const galleries = document.querySelectorAll("[data-gallery]");
         if (galleries.length) {
             let galleyItems = [];
@@ -7156,7 +6640,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 galleyItems.push({
                     gallery,
                     galleryClass: lightgallery_es5(gallery, {
-                        plugins: [ lg_zoom_min, lg_thumbnail_min ],
+                        plugins: [ lg_fullscreen_min ],
                         licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
                         speed: 500,
                         selector: ".gallery__item"
