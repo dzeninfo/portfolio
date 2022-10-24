@@ -3741,12 +3741,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
 @media (hover: none) and (pointer: coarse) {
   .gallery__inner {
-    width: 100%;
-    overflow: scroll;
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
-    border: 1px solid transparent;
-    -ms-touch-action: pan-x;
-        touch-action: pan-x;
   }
 }
 
