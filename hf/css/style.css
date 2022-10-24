@@ -3739,7 +3739,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 }
 
-@media (hover: none) and (pointer: coarse) {
+@media (pointer: coarse) {
   .gallery__inner {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
