@@ -1425,8 +1425,6 @@ textarea.input {
 
 .gallery__inner {
   position: relative;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
 }
 
 .gallery__items {
@@ -3738,6 +3736,17 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .card__add {
     display: none;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .gallery__inner {
+    width: 100%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid transparent;
+    -ms-touch-action: pan-x;
+        touch-action: pan-x;
   }
 }
 
