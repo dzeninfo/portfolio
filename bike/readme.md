@@ -4,7 +4,6 @@
   <li>Images swiper slider autoplay</li>
   <li>Scroll to sections</li>
   <li>Smooth scroll up</li>
-  <li>Scroll Animations</li>
   <li>Burger menu</li>
   <li>lightGallery plugin</li>
   <li>Transition.css</li>
