@@ -10,6 +10,7 @@
   <li>Grid</li>
   <li>Spoiler</li>
   <li>Tips</li>
+  <li>Block with video</li>
 </ol>
 
 <h3>Feautures</h3>
