@@ -1,7 +1,7 @@
 <h3>Technologies I used:</h3>
 
 <ol>
-  <li>Images swiper slider autoplay</li
+  <li>Images swiper slider autoplay</li>
   <li>Scroll to sections</li>
   <li>Smooth scroll up</li>
   <li>Scroll Animations</li>
