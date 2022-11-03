@@ -9,6 +9,7 @@
   <li>Transition.css</li>
   <li>Grid</li>
   <li>Spoiler</li>
+  <li>Tips</li>
 </ol>
 
 <h3>Feautures</h3>
