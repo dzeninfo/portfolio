@@ -977,7 +977,7 @@
         const da = new DynamicAdapt("max");
         da.init();
         window.onload = function() {};
-        window["FLS"] = true;
+        window["FLS"] = false;
         isWebp();
         menuInit();
         digitsCounter();
