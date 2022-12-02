@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Contact</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20221202170128">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css?_v=20221202170128" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js?_v=20221202170128" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="index.html" class="menu__link">home</a></li>
+							<li class="menu__item"><a href="works.html" class="menu__link">works</a></li>
+							<li class="menu__item"><a href="contact.html" class="menu__link">contact</a></li>
+							<!-- <li class="menu__item"><a href="index.html" class="menu__link">resume</a></li> -->
+							<!-- <li class="menu__item"><a href="index.html" class="menu__link">blog</a></li> -->
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="contact">
+				<div class="contact__map map">
+					<div class="map__block">
+						<div id="map"></div>
+					</div>
+				</div>
+				<div class="contact__form">
+					<form class="form" action="https://forms.un-static.com/forms/1dc9abdf02e6e6bea4cd47aedf9cf7ee65e0790a" method="POST">
+						<h1 id="contactTitle" class="form__title">Contact</h1>
+						<h2 class="form__subtitle">Have a question or want to work together?</h2>
+						<div class="form__field">
+							<label class="form__field-label" for="formName">Name*</label>
+							<input class="form__field-input" type="text" id="formName" name="name" data-validate data-required>
+						</div>
+						<div class="form__field">
+							<label class="form__field-label" for="formEmail">E-mail*</label>
+							<input class="form__field-input" type="email" id="formEmail" name="email" data-required="email" data-validate>
+						</div>
+						<div class="form__field">
+							<label class="form__field-label" for="formTitle">Title*</label>
+							<input class="form__field-input" type="text" id="formTitle" name="title" data-validate data-required>
+						</div>
+						<div class="form__field">
+							<label class="form__field-label" for="formMessage">Message*</label>
+							<textarea class="form__field-textarea" id="formMessage" name="message" data-autoheight data-validate data-required></textarea>
+						</div>
+						<button class="form__button" type="submit">Send Message</button>
+					</form>
+				</div>
+			</section>
+			<aside class="aside aside_top">
+				<div class="aside__block aside__block_row">
+					<div class="aside__foto "><img class="foto" src="img/author/1.jpg" alt="foto"></div>
+					<div class="aside__icons aside__icons_top">
+						<a class="aside__link" href="https://www.linkedin.com/in/dmitri-undefined-7360a2237" target="_blank">
+							<img class="aside__icon" src="img/icons/socials/linkedin.svg" alt="linkedin">
+						</a>
+						<a class="aside__link" href="https://www.facebook.com/mihass.mih" target="_blank">
+							<img class="aside__icon" src="img/icons/socials/fb.svg" alt="facebook">
+						</a>
+						<a class="aside__link" href="https://github.com/dzeninfo/" target="_blank">
+							<img class="aside__icon" src="img/icons/socials/git2.svg" alt="git">
+						</a>
+					</div>
+				</div>
+			</aside>
+		</main>
+		<!-- <footer class="footer">
+	<div class="footer__container">
+	</div>
+</footer> -->
+	</div>
+
+	<script src="js/app.min.js?_v=20221202170128"></script>
+</body>
+
+</html>
