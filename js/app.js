@@ -535,7 +535,6 @@
         function showMore() {
             window.addEventListener("load", (function(e) {
                 const showMoreBlocks = document.querySelectorAll("[data-showmore]");
-                console.log(showMoreBlocks);
                 let showMoreBlocksRegular;
                 let mdQueriesArray;
                 if (showMoreBlocks.length) {
@@ -4742,22 +4741,18 @@
             }
         }), 0);
         window.onload = function() {
-            let map = L.map("map").setView([ 59.2, 24.778716 ], 5);
-            let icon = L.icon({
-                iconUrl: "/../img/author/1-round.png",
+            var map = L.map("map").setView([ 59.2, 24.778716 ], 5);
+            var icon = L.icon({
+                iconUrl: "../../img/author/1-round.png",
                 iconSize: [ 25, 30 ]
             });
-            let marker = L.marker([ 59.4, 24.778716 ], {
+            var marker = L.marker([ 59.4, 24.778716 ], {
                 icon
             }).addTo(map);
             marker;
             L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
                 maxZoom: 19
             }).addTo(map);
-            $("#gform").on("submit", (function(e) {
-                $("#gform *").fadeOut(2e3);
-                $("#gform").prepend("Your submission has been processed...");
-            }));
         };
         window["FLS"] = false;
         isWebp();
