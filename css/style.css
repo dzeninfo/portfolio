@@ -170,9 +170,9 @@ body::after {
 
 .popup_show .popup__content {
   visibility: visible;
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  -webkit-transform: translate(0);
+      -ms-transform: translate(0);
+          transform: translate(0);
 }
 
 .popup__wrapper {
@@ -194,9 +194,9 @@ body::after {
 
 .popup__content {
   visibility: hidden;
-  -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-          transform: scale(0);
+  -webkit-transform: translate(-200%);
+      -ms-transform: translate(-200%);
+          transform: translate(-200%);
   -webkit-transition: -webkit-transform 0.3s ease 0s;
   transition: -webkit-transform 0.3s ease 0s;
   -o-transition: transform 0.3s ease 0s;
