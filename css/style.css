@@ -289,6 +289,8 @@ body::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1358,6 +1360,7 @@ body::after {
 
 .contact__form {
   margin: 0 auto;
+  padding: 0 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1729,6 +1732,15 @@ body::after {
 }
 
 @media (max-width: 47.99875em) {
+  .popup__list {
+    gap: 5px;
+  }
+
+  .popup__list-item {
+    width: 30px;
+    height: 30px;
+  }
+
   .touch [data-fp] {
     -webkit-transition: height 0.2s;
     -o-transition: height 0.2s;
